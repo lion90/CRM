@@ -71,6 +71,7 @@
 	<h1>Hi everybody</h1>
 	<h1>What's up Neo!</h1>
 	<h1>What's up Toreto!</h1>
+
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 

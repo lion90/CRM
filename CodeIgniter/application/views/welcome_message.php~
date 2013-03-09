@@ -69,16 +69,14 @@
 <div id="container">
 	<h1>Welcome to CodeIgniter Team By Schneider Electric!</h1>
 	<h1>Hi everybody</h1>
-<<<<<<< HEAD
 	<h1>What's up Neo!</h1>
+	<h1>What's up Toreto!</h1>
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
-=======
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 		<p>Cada vez le estamos poniendo más cambios a esta mierda xD</p>
->>>>>>> a1a9038515421b5969c91b70c0adcb24dd14123a
 		<p>If you would like to edit this page you'll find it located at:</p>
 		<code>application/views/welcome_message.php</code>
 
