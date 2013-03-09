@@ -68,7 +68,7 @@
 
 <div id="container">
 	<h1>Welcome to CodeIgniter Team By Schneider Electric!</h1>
-
+	<h1>Hi everybody</h1>
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
