@@ -67,7 +67,7 @@
 <body>
 
 <div id="container">
-	<h1>Welcome to CodeIgniter Team By Schneider Electric!</h1>
+	<h1>Welcome to CodeIgniter Team By Schneider Electric! </h1>
 	<h1>Hi everybody</h1>
 	<h1>What's up Neo!</h1>
 	<h1>What's up Toreto!</h1>
@@ -85,9 +85,7 @@
 
 		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
 	</div>
-        <div>
-            <h1>Modificacion hecha por Marco Rivas</h1>
-        </div>
+
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </div>
 
