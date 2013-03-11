@@ -4,6 +4,7 @@
 /*==============================================================*/
 
 
+
 drop table if exists ALL_VALUES;
 
 drop table if exists CAREERS;
