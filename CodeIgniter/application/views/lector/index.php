@@ -20,5 +20,5 @@
 </ul>
 </div>
 <div id="cuerpo">
-	<h1 style="margin-top:250px">Lector</h1>
+	<h1 style="margin-top:250px;padding-bottom:150px">Lector</h1>
 </div>

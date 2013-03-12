@@ -29,5 +29,5 @@
 </ul>
 </div>
 <div id="cuerpo">
-	<h1 style="margin-top:250px">Administrador</h1>
+	<h1 style="margin-top:250px;padding-bottom:150px">Administrador</h1>
 </div>

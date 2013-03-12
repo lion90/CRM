@@ -17,5 +17,5 @@
 </ul>
 </div>
 <div id="cuerpo">
-	<h1 style="margin-top:250px">Digitador</h1>
+	<h1 style="margin-top:250px;padding-bottom:150px">Digitador</h1>
 </div>
