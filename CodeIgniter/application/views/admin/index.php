@@ -1,4 +1,4 @@
-<div id="menu">
+<div id="content">
 <ul id="accordion">
 	
 <li>
@@ -27,7 +27,8 @@
 	</li>
 
 </ul>
-</div>
+
 <div id="cuerpo">
-	<h1 style="margin-top:250px;padding-bottom:150px">Administrador</h1>
+	<h1 >Administrador</h1>
+</div>
 </div>

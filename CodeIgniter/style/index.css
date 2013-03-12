@@ -1,18 +1,20 @@
 body
 {
     background: url("imagenes/blue.jpg") no-repeat center center fixed;
-    font-size: 100.01%;
+    font-size: 12px;
     text-align: left;
     font-family: 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
-    font-size: 75.00%;
-    height: auto;    
+}
+#wrapper
+{
+    margin: auto;
+    width: 1024px;
+    position:relative;
 }
 #baner{
-position:absolute;
-top:10px;
-left:40px;
-width:1200px;
-height: auto;
+top:0px;
+left:0px;
+height: 115px;
 border-radius: 7px;
 background: white;
 opacity: 0.7;
@@ -36,7 +38,7 @@ b{color: white;}
 	z-index:1;    
    }
 #msj_bienvenida{
-width: 650px;
+width: 500px;
 color:black;
 font-size: 25px;
 height: auto;
@@ -44,25 +46,26 @@ height: auto;
 }
 #cuadro_login
 {
-    position:fixed;
+    /*position:fixed;
     top:30%;
-    right:0%;
-    border: 0px solid;
+    right:0%;*/
     width: 100%;
-    height: 30%;
+    height: 170px;
     background-color: #ffffff;
-    opacity:0.4;
-    background:#ffffff;
-    border-radius: 0px 0px 0px 0px;
-
+    opacity:0.6;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px black;
 }
 #cuadro_login2
 {
-    position:fixed;
+    /*position:fixed;
     top:34%;
     right:15%;
-    width: 73%;
-    height: 30%;
+    width: 73%;*/
+    height: 150px;
+    
+    margin: 200px;
+    padding-top: 20px;
 }
 
   .input_user
@@ -115,19 +118,23 @@ display: block;}
  }
  #pie_pag
    {
- 	position:relative;
-    top:650px;
-    width:auto;
-    height: auto;
+ padding-top: 15px;
+    
     color: white;
+    clear: both;
 	}
 #cuerpo
 {
 background:white;
-position:absolute;
-top:140px;
-left:220px;
-width:1015px;
-height:auto;
+position:relative;
+top:10px;
+left:0px;
+width:800;
+
 border-radius:5px;
+float: right;
+}
+#content
+{
+	position: relative;
 }

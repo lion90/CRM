@@ -1,8 +1,9 @@
-	<div class="login" id="cuadro_login"></div>
-	<div id="cuadro_login2">
+	<div class="login" id="cuadro_login">
+	<!--div id="cuadro_login2"-->
 	<?php 
 	$this->load->helper("form");
-	echo form_open("index.php/login/redireccion");
+	$atrb = array('id' =>'cuadro_login2');
+	echo form_open("index.php/login/redireccion",$atrb);
 	?>
 	<table  width="50%" align="center" >
 	<tr>
@@ -34,4 +35,7 @@
          <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span> </p>
           </div>
 		</td>
-	</tr></table></form></div></div>
+	</tr></table>
+</form>
+<!--/div-->
+</div>

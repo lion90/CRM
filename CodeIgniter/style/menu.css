@@ -1,11 +1,12 @@
 		#accordion 
 		{
-		position:absolute;
-		top:125px;
+		position:relative;
+		top:0px;
 		left:0px;
 		width:auto;
 		height:auto;
 		list-style:none;
+		float: left;
 		}
 
 		a {
