@@ -38,7 +38,11 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+
+$route['default_controller'] = "login";
+$route['1']="administrador";
+$route['2']="lector";
+$route['3']="digitador";
 $route['404_override'] = '';
 
 
