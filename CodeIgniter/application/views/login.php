@@ -4,8 +4,7 @@
 	$this->load->helper("form");
 	echo form_open("index.php/login/redireccion");
 	?>
-
-		<table  width="50%" align="center" >
+	<table  width="50%" align="center" >
 	<tr>
 	<td><img src="<?php echo base_url(); ?>style/imagenes/candado.png" border="0"></td>
 	<td><table>

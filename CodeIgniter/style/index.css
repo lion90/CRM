@@ -115,11 +115,10 @@ display: block;}
  }
  #pie_pag
    {
-		 position:fixed;
-    top:94%;
-    right:12%;
-    width: 73%;
-    height: 30%;
+ 	position:relative;
+    top:650px;
+    width:auto;
+    height: auto;
     color: white;
 	}
 #cuerpo
