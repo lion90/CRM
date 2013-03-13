@@ -135,7 +135,7 @@
  		 <input class="fieldLabel" tabindex="30" style="margin-left:0px;" type="radio"  name="group2"  value="opcion1">
 	     <label class="fieldLabel" >Excelente</label>
 	 	 <input class="fieldLabel" tabindex="31" style="margin-left:0px;" type="radio"  name="group2"  value="opcion2">
-		 <label class="fieldLabel" >Nuy Buena</label>
+		 <label class="fieldLabel" >Muy Buena</label>
 		 <input class="fieldLabel" tabindex="32" style="margin-left:0px;" type="radio"  name="group2"  value="opcion3">
 	     <label class="fieldLabel" >Buena</label>
 	 	 <input class="fieldLabel" tabindex="33" style="margin-left:0px;" type="radio"  name="group2"  value="opcion4">
