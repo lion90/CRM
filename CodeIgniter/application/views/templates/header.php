@@ -13,5 +13,5 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/lectura.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/escritura.js"></script>
 </head>
-<body>	<div id="wrapper">
+<body><center><div id="wrapper">
 	
