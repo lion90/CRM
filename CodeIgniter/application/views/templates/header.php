@@ -3,6 +3,7 @@
 	<title>CRM</title>
 		<?php echo link_tag('style/index.css');?>
 		<?php echo link_tag('style/menu.css');?>
+		<?php echo link_tag('style/autocomplete.css');?>
                 <?php echo link_tag('style/style.css');?>
 		<?php echo link_tag('jquery-ui-1.10.0.custom/css/ui-lightness/jquery-ui-1.10.0.custom.css');?>
 		<?php echo link_tag('style/formularios.css');?>

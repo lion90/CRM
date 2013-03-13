@@ -10,6 +10,10 @@ class Digitador extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 		public function ing_encuesta(){
-		$this->load->view('lector/ingreso_encuesta');
+		$this->load->view('digitador/ingreso_encuesta');
+	}
+		public function ing_openhouse(){
+		$this->load->view('templates/header');
+		$this->load->view('digitador/ingreso_openhouse');
 	}
 }

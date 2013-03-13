@@ -1,0 +1,47 @@
+#cargar{
+margin-top: 75px;
+margin-left: 25px;
+margin-bottom: 75px;
+width: 500px;
+height: 30px;
+border-radius: 3px;
+background: black;
+color: white;
+font-size: 15px;
+opacity: 0.6;
+}
+#resultado{
+margin-top: -78px;
+list-style: none;
+width: 700px;
+height: auto;
+border-radius: 2px;
+opacity: 1;
+font-size: 20px;
+text-align: left;
+}
+#enviar{
+background: #30FFF9 url(imagenes/enviar.png);
+margin-left: 20px;
+height:32px;
+width: 32px;
+border-radius: 5px;
+opacity: 0.8;
+cursor:pointer
+}
+#auto{
+position: relative;
+background: white;
+opacity: 0.8;
+width: 600px;
+height: 200px;
+border-radius: 8px;
+box-shadow: 0 0 10px 5px black;
+}
+.hay{
+background: white;	
+}
+.seleccionado{
+background: #5DB5F4;
+border-radius: 6px;
+}

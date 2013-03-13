@@ -7,11 +7,12 @@
 	color: #333;
 }
 #block-itunes {
-	position: relative;
-	width: 775px;
+	/*position: relative;*/
+	width: 950px;
 	height: 220px;
-	background: #fff;
+	background: blue;
 	margin: 0 auto;
+
 }
 #block-itunes img {
 	display: block;
@@ -50,6 +51,7 @@
 	position: relative;
 	width: 550px;
 	height: 219px;
+	margin-left: -225px;
 }
 #blockA a {
 	position: absolute;
