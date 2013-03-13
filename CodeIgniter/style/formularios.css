@@ -1,0 +1,114 @@
+
+fieldset       {
+   color:white;
+   background-color:white;
+   padding:2px;
+   border:groove 5px white;
+   width:770px;
+   margin:0 auto;
+   text-align:left;
+}
+
+legend         {
+   color:white;
+   font-weight:bold;
+   font-variant:small-caps;
+   background-color:#0A0A82;
+   padding:2px 6px;
+   margin-bottom:8px;
+     font-size:1.3em;
+}
+
+label          {
+ 
+   font-weight:bold;
+
+   color:black;
+   line-height:normal;
+   text-align:right;
+   margin-right:10px;
+   position:relative;
+   display:block;
+   float:left;
+   width:auto;
+   
+}
+
+label.fieldLabel    {
+   display:inline;
+   float:none;
+   margin-left:0px;
+}
+
+input.formInputText {
+   font-size:12px;
+   color: black;
+   background-color:white;
+   padding:2px;
+   margin-right:3px;
+   margin-bottom:5px;
+   border-radius:2px;
+   width:auto;
+}
+
+input.formInputText:hover {
+   background-color:#47A9D7;
+   border:solid 2px black;
+   color:white;
+}
+
+input.formInputText:focus  {
+   background-color: white;
+   border-radius:2px;
+   color:black;
+
+}
+
+select.formSelect    {
+   color:white;
+   background-color:#3F55E4;
+   padding:2px;
+   border:solid 1px black;
+   margin-right:1px;
+   margin-bottom:5px;
+   cursor:pointer;
+}
+
+select.formSelect:hover    {
+   color:black;
+   background-color:#47A9D7;
+   border:solid 1px black;
+}
+
+select.formSelect:focus   {
+   background-color:#3F55E4;
+   border:solid 1px #47A9D7;
+   color:black;
+}
+
+input.formInputButton  {
+   font-size:1em;
+   vertical-align:middle;
+   font-weight:bolder;
+   text-align:center;
+   color:#360909;
+   background:#77d5f7 url(17.PNG) repeat-x;
+   padding:1px 15px 1px 15px;
+   border:1px solid #77d5f7;
+   cursor:pointer;
+   float:right;
+}
+
+input.formInputButton:hover  {
+   background-image:url(14.png);
+   color:#033146;
+   border:1px solid #033146;
+   font-size:1.1em;
+}
+
+input.formInputButton:active {
+   background-image:url(16.png);
+   color:black;
+   border:1px solid #FB7272;
+   font-size:1.1em;
+}
