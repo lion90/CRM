@@ -17,10 +17,10 @@ class Login extends CI_Controller {
           }
           else
           {
-             $this->load->model("CRM_model");
+              $this->load->model("CRM_model");
              if ($this->CRM_model->comprobar_usuario($_REQUEST['nick'], $_REQUEST['pass']))
-             {	$data=$this->CRM_model->comprobar_usuario($_REQUEST['nick'], $_REQUEST['pass']);
-               redirect("index.php/".$data['nivel']."");
+             {  $data=$this->CRM_model->comprobar_usuario($_REQUEST['nick'], $_REQUEST['pass']);
+               redirect("index.php/".$data['USER_TYPE_ID']."");
              }
              else
              {
