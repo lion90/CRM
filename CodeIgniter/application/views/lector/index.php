@@ -14,7 +14,7 @@
 		<a href="#" class="item op1Over2" rel="op1"><img src="<?php echo base_url(); ?>style/imagenes/informe.png" border="0" style="width:20px;height:20px"></img><b> Generar Informe</b></a>
 	</li>
 	<li>
-		<a href="#" onclick="load_form()" class="item op1Over2" rel="op1"><img src="<?php echo base_url(); ?>style/imagenes/logout.png" border="0" style="width:20px;height:20px"></img><b> Salir</b></a>
+		<a href="login/logout" onclick="load_form()" class="item op1Over2" rel="op1"><img src="<?php echo base_url(); ?>style/imagenes/logout.png" border="0" style="width:20px;height:20px"></img><b> Salir</b></a>
 	</li>
 
 </ul>

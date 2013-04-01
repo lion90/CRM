@@ -11,15 +11,46 @@ body
     width: 1024px;
     position:relative;
 }
-#baner{
-top:0px;
-left:0px;
-height: 115px;
-border-radius: 7px;
+#banner{
+height: 130px;
+border-radius: 7 7 0 0;
 background: white;
 opacity: 0.7;
+/*width: 1000px;*/
+margin-left: 40px;
+}
+#logo img{
+	
+	/*position: relative;*/
+    float: left;
+    width: 80px;
+    height: 90px;
+    margin-left: 40px;
+    padding: 10px;
 }
 
+#logout img{
+	/*position: relative;*/
+    float: right;
+    width: 30px;
+    height: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+    padding: 10px;
+}
+#encabezados {
+    text-align: center;
+    float: left;
+    padding-left: 60px;
+    font-size: 20px;
+    font-family: Calisto MT;
+    height: 110px;
+    margin-bottom: 10px;
+}
+#sesion {
+    float: right;
+    margin-top: 30px;
+}
 b{color: white;}
 
 
@@ -122,7 +153,7 @@ display: block;}
 background:white;
 position:relative;
 top:10px;
-left:0px;
+left:0px; 
 width:800px;
 
 border-radius:5px;
