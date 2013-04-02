@@ -3,6 +3,7 @@ body
     background: url("imagenes/blue.jpg") no-repeat center center fixed;
     font-size: 12px;
     text-align: left;
+    text-decoration: none;
     font-family: 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
 }
 #wrapper
@@ -19,19 +20,27 @@ opacity: 0.7;
 /*width: 1000px;*/
 margin-left: 40px;
 }
+#logo{
+    
+    /*position: relative;*/
+    float: left;
+    }
 #logo img{
 	
 	/*position: relative;*/
-    float: left;
+    /*float: left;*/
     width: 80px;
     height: 90px;
     margin-left: 40px;
     padding: 10px;
 }
-
+#logout{
+    /*position: relative;*/
+    float: right;
+}
 #logout img{
 	/*position: relative;*/
-    float: right;
+    /*float: right*/;
     width: 30px;
     height: 40px;
     margin-right: 40px;
@@ -50,6 +59,10 @@ margin-left: 40px;
 #sesion {
     float: right;
     margin-top: 30px;
+    
+}
+#sesion a{
+	text-decoration: none;
 }
 b{color: white;}
 

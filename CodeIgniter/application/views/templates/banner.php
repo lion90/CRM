@@ -1,3 +1,5 @@
+<?php $this->load->library('session');
+	$this->load->helper('url'); ?>
 <div id="banner">
 <div id="logo">
 <img src="<?php echo base_url(); ?>style/imagenes/udb.png">
@@ -7,16 +9,15 @@
 <h4>Departamento de Publicidad</h4>
 </div>
 <div id="logout">
-<img  src="<?php echo base_url(); ?>style/imagenes/Log-Out-icon.png">
+<a href="login/logout"><img  src="<?php echo base_url(); ?>style/imagenes/Log-Out-icon.png" /></a>
 </div>
 <div id="sesion">
 	<p>
-	<?php $this->load->library('session');
-	$this->load->helper('url');
+	<?php
 			$data=$this->session->all_userdata('username');
 			echo $data['username'];
 	 ?>
-	 <br>
+	 <br />
 	 <a href="login/logout">Cerrar Sesi&oacute;n</a>
 	</p>
 </div>
