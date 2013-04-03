@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8" />
 	<title>CRM</title>
 		<?php echo link_tag('style/index.css');?>
 		<?php echo link_tag('style/menu.css');?>
@@ -14,5 +16,5 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/lectura.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/escritura.js"></script>
 </head>
-<body><center><div id="wrapper">
+<body><div id="wrapper">
 	

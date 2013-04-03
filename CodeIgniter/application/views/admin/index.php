@@ -1,34 +1,29 @@
-<div id="content">
-<ul id="accordion">
-	
-<li>
-		<a  href="#" class="item op1Over2" rel="op1"><img src="<?php echo base_url(); ?>style/imagenes/grafica.png" border="0" style="width:19px;height:19px; float: left; padding-left: 10px;" ></img><b>Ver Graficas</b></a>
-		<ul >
-			<li><a class="s" href="#"><img src="<?php echo base_url(); ?>style/imagenes/grafica.png" border="0" style="width:19px;height:19px; float: left; padding-left: 10px;" ></img>Encuesta</a></li>	
-			<li><a class="s" href="#"><img src="<?php echo base_url(); ?>style/imagenes/open.png" border="0" style="width:19px;height:19px; float: left; padding-left: 10px;">Open House</a></li>
-			<li><a class="s" href="#"><img src="<?php echo base_url(); ?>style/imagenes/grafica.png" border="0" style="width:19px;height:19px; float: left; padding-left: 10px;" ></img>Paquete</a></li>	
-			<li><a class="s" href="#"><img src="<?php echo base_url(); ?>style/imagenes/grafica.png" border="0" style="width:19px;height:19px; float: left; padding-left: 10px;">Incripcion</a></li>
-		</ul>
-	</li>
-	<li>
-		<a  href="#" class="item op1Over2" rel="op1"><img src="<?php echo base_url(); ?>style/imagenes/informe.png" border="0" style="width:19px;height:19px; float: left; padding-left: 10px;" ></img><b>Ingresar Documento</b></a>
-		<ul >
-			<li><a id="ing_encuesta" class="s" href="#"><img src="<?php echo base_url(); ?>style/imagenes/informe.png" border="0" style="width:19px;height:19px; float: left; padding-left: 10px;" ></img>Encuesta</a></li>	
-			<li><a id="ing_openhouse" class="s" href="#"><img src="<?php echo base_url(); ?>style/imagenes/informe.png" border="0" style="width:19px;height:19px; float: left; padding-left: 10px;">Open House</a></li>
-			<li><a class="s" href="#"><img src="<?php echo base_url(); ?>style/imagenes/informe.png" border="0" style="width:19px;height:19px; float: left; padding-left: 10px;" ></img>Paquete</a></li>	
-			<li><a class="s" href="#"><img src="<?php echo base_url(); ?>style/imagenes/informe.png" border="0" style="width:19px;height:19px; float: left; padding-left: 10px;">Incripcion</a></li>
-		</ul>
-	</li>
-	<li>
-		<a href="#" class="item op1Over2" rel="op1"><img src="<?php echo base_url(); ?>style/imagenes/informe.png" border="0" style="width:20px;height:20px; float: left; padding-left: 10px;"></img><b> Generar Informe</b></a>
-	</li>
-	<li>
-		<a href="login/logout"  class="item op1Over2" rel="op1"><img src="<?php echo base_url(); ?>style/imagenes/logout.png" border="0" style="width:20px;height:20px; float: left; padding-left: 10px;;"></img><b> Salir</b></a>
-	</li>
+<nav>
+<ul id="menu">
+<li><a href="#">Gr&aacute;ficas</a>
+	<ul>
+		<li><a href="#">Encuesta</a></li>
+		<li><a href="#">Open House</a></li>
+		<li class="ultimo"><a href="#">Paquete</a></li>
+	</ul>	
+</li>
+<li><a href="#">Documentos</a>
+	<ul>
+		<li><a href="#">Open House</a></li>
+		<li><a href="#">Paquete</a></li>
+		<li class="ultimo"><a href="#">Inscripcion</a></li>
+	</ul>	
+</li>
+<li><a href="#">Informes</a>
+	<ul>
+		<li><a href="#">Open House</a></li>
+		<li><a href="#">Paquete</a></li>
+		<li class="ultimo"><a href="#">Inscripcion</a></li>
+	</ul>	
+</li>
 
 </ul>
-
-<div id="cuerpo">
+</nav>
+<div id="content">
 	<h1 >Administrador</h1>
-</div>
 </div>
