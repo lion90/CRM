@@ -7,9 +7,9 @@
 		<li class="ultimo"><a href="#">Paquete</a></li>
 	</ul>	
 </li>
-<li><a href="#">Documentos</a>
+<li><a   href="#">Documentos</a>
 	<ul>
-		<li><a href="#">Open House</a></li>
+		<li ><a id="encuesta" href="#">Encuesta</a></li>
 		<li><a href="#">Paquete</a></li>
 		<li class="ultimo"><a href="#">Inscripcion</a></li>
 	</ul>	

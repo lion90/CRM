@@ -1,5 +1,4 @@
-<div id="menu">
-	<br>
+<br>
 <fieldset>
  		 <legend >Informaci&oacute;n General</legend>
  		 <label class="fieldLabel"  >Fecha:</label>
@@ -143,4 +142,3 @@
 		 <br>
 		 <br>
 </fieldset>
-</div>
