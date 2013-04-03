@@ -42,6 +42,7 @@ nav{
  border-radius:0 0 10px 10px;
  border:1px white solid;
  border-top:none;
+ border-top:1px white dashed;
 }
 
 #menu li ul li{
@@ -49,7 +50,7 @@ nav{
  padding:10px;
  width:170px;
  border-top:1px white dashed;
- border-bottom:1px white dashed;
+ 
  border-left:1px white solid;
  border-right:1px white solid;
 }
