@@ -9,14 +9,14 @@
 
 	</ul>	
 </li>
-<li><a href="#">Documentos</a>
+<li><a href="#">Reportes</a>
 	<ul>
 		<li><a href="#">Open House</a></li>
 		<li><a href="#">Paquete</a></li>
 		<li class="ultimo"><a href="#">Inscripcion</a></li>
 	</ul>	
 </li>
-<li><a href="#">Informes</a>
+<li><a href="#">Correos</a>
 	<ul>
 		<li><a href="#">Open House</a></li>
 		<li><a href="#">Paquete</a></li>

@@ -43,6 +43,7 @@ $route['default_controller'] = "login";
 $route['1']="administrador";
 $route['2']="lector";
 $route['3']="digitador";
+$route['4']="recepcionista";
 $route['404_override'] = '';
 
 

@@ -7,7 +7,7 @@ $(document).ready(function()
   		$("#content").load("digitador/ing_encuesta");
  	 });
 
-  $("#ing_openhouse").click(function()
+  $("#OH").click(function()
   {
 	window.open("digitador/ing_openhouse")
 	});	
