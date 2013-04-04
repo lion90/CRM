@@ -14,6 +14,8 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/jquery-1.9.0.js"></script>
                 <script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/jquery.jqplot.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/plugins/jqplot.barRenderer.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/plugins/jqplot.donutRenderer.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/plugins/jqplot.pieRenderer.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/plugins/jqplot.categoryAxisRenderer.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/plugins/jqplot.categoryAxisRenderer.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/plugins/jqplot.pointLabels.min.js"></script>

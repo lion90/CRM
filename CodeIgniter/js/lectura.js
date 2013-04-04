@@ -7,17 +7,26 @@ function graphic1(a1,a2,a3,a4,a5,a6){
 	a5= parseInt(a5);
 	a6= parseInt(a6);
 
-        var ticks = ['Radio', 'Prensa', 'Carteleras','Visitas','TV','Otras'];
+        var data = [
+        ['Radio', a1],['Prensa', a2],['Carteleras',a3],['Visitas',a4],['TV',a5],['Otras',a6]
+        ];
          
-        plot1 = $.jqplot('chart', [[a1,a2,a3,a4,a5,a6]], {
+      var  plot1 = $.jqplot('chart', [data], {
             // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
-		animate: !$.jqplot.use_excanvas,
-		title:"COMPARACION MEDIOS PUBLICITARIOS CON CLIENTES UDB",	    
+/*		animate: !$.jqplot.use_excanvas,
+*/		title:"COMPARACION MEDIOS PUBLICITARIOS CON CLIENTES UDB",	    
 		seriesDefaults:{
-                renderer:$.jqplot.BarRenderer,
-               pointLabels: { show: true, location: 'wo', edgeTolerance: -5,   angle: 30,},
-            },
-	    axesDefaults: {tickOptions: {
+                renderer:$.jqplot.PieRenderer,
+                rendererOptions:{
+                  
+                  showDataLabels:true,
+                  /*sliceMargin:4,
+                  fill: false,
+                  lineWidth:5*/
+            }
+          },
+             legend: {show:true,location:'e'}
+	    /*axesDefaults: {tickOptions: {
              fontSize: '14pt'}},
 			 
 			 axes: {
@@ -25,7 +34,7 @@ function graphic1(a1,a2,a3,a4,a5,a6){
                     renderer: $.jqplot.CategoryAxisRenderer,
                     ticks: ticks
                 }
-            },
+            },*/
         });
 }
 function graphic2(a1,a2,a3){
@@ -151,25 +160,35 @@ function graphic4(a1,a2){
   $.jqplot.config.enablePlugins = true;
   a1= parseInt(a1);
   a2= parseInt(a2);
-        var ticks = ['Open House y Paquete', 'Paquete y Matricula'];
-         
-        plot1 = $.jqplot('chart', [[a1,a2]], {
+                 
+      var  plot1 = $.jqplot('chart', [[['Open House y Paquete',a1],['Paquete y Matricula',a2]]], {
             // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
-    animate: !$.jqplot.use_excanvas,
+    /*animate: !$.jqplot.use_excanvas,*/
     title:"COMPARACION PROCESOS REALIZADOS ENTRE ESTUDIANTES",      
     seriesDefaults:{
-                renderer:$.jqplot.BarRenderer,
-               pointLabels: { show: true, location: 'wo', edgeTolerance: -5,   angle: 30,},
+                /*renderer:$.jqplot.BarRenderer,*/
+                renderer:$.jqplot.PieRenderer,
+                rendererOptions:{
+                  
+                  showDataLabels:true,
+                  sliceMargin:4,
+                  fill: false,
+                  lineWidth:5
+                }
+              },
+               legend: {show:true,location:'e'}
+
+               /*pointLabels: { show: true, location: 'wo', edgeTolerance: -5,   angle: 30,},
             },
       axesDefaults: {tickOptions: {
              fontSize: '14pt'}},
-       
-       axes: {
+       */
+      /* axes: {
                 xaxis: {
                     renderer: $.jqplot.CategoryAxisRenderer,
                     ticks: ticks
                 }
-            },
+            },*/
         });
 }
 

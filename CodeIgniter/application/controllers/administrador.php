@@ -2,6 +2,11 @@
 
 class Administrador extends CI_Controller {
 	
+	     function __construct()
+	{
+		parent::__construct();
+		$this->load->helper(array('form', 'url'));
+   	}
 	public function index()
 	{
 		/*$this->load->helper('url');*/
@@ -12,5 +17,9 @@ class Administrador extends CI_Controller {
 		$this->load->view('templates/banner');
 		$this->load->view('admin/index');
 		$this->load->view('templates/footer');
+	}
+	public function excel()
+	{
+		$this->load->view('admin/upload_excel');
 	}
 }

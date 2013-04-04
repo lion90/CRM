@@ -7,6 +7,11 @@ $(document).ready(function()
   		$("#content").load("digitador/ing_encuesta");
  	 });
 
+  $("#excel").click(function()
+  	{
+  		$("#content").load("administrador/excel");
+ 	 });
+
   $("#OH").click(function()
   {
 	window.open("digitador/ing_openhouse")
