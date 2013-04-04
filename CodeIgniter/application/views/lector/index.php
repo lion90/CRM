@@ -2,9 +2,11 @@
 <ul id="menu">
 <li><a href="#">Gr&aacute;ficas</a>
 	<ul>
-		<li><a href="#">Encuesta</a></li>
-		<li><a href="#">Open House</a></li>
-		<li class="ultimo"><a href="#">Paquete</a></li>
+		<li><a id="howenc" href="#">Cómo se enteraron</a></li>
+		<li><a id="opcarreras" href="#">Opción de Carreras</a></li>
+		<li ><a id="opuniv" href="#">Opción de Universidades</a></li>
+		<li class="ultimo"><a id="howopen" href="#">Procesos realizados por estudiantes</a></li>
+
 	</ul>	
 </li>
 <li><a href="#">Documentos</a>

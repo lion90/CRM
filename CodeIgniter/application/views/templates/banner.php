@@ -2,7 +2,7 @@
 	$this->load->helper('url'); ?>
 <div id="banner">
 <div id="logo">
-<a href="digitador"><img src="<?php echo base_url(); ?>style/imagenes/udb.png"></a>
+<img src="<?php echo base_url(); ?>style/imagenes/udb.png">
 </div>
 <div id="encabezados">
 <h1>UNIVERSIDAD DON BOSCO</h1>
