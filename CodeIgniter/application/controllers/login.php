@@ -8,7 +8,7 @@ class Login extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 	public function redireccion(){
-		 $this->load->library("form_validation");
+           $this->load->library("form_validation");
           $this->form_validation->set_rules("nick","Nick", "required");
           $this->form_validation->set_rules("pass","Password", "required|min_length[5]");
           if ($this->form_validation->run() == FALSE)
@@ -27,10 +27,10 @@ class Login extends CI_Controller {
              else
              {
                  $this->index();
-             }
+             }                                   
           }
-
-	}
+              
+      }
 
 public function logout()
        {
