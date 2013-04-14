@@ -14,8 +14,8 @@
 <div id="sesion">
 	<p>
 	<?php
-			$data=$this->session->all_userdata('username');
-			echo $data['username'];
+			$data=$this->session->all_userdata();
+			echo $data['USER_NAME'];
 	 ?>
 	 <br />
 	 <a href="login/logout">Cerrar Sesi&oacute;n</a>

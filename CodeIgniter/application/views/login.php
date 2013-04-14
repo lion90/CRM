@@ -11,7 +11,7 @@
 	<td><table>
 	<tr>
 	<td>USUARIO</td>
-	<td><input class="input_user" type="text" name="nick" id="nick" value=""></td>
+	<td><input class="input_user" type="text" name="nick" id="nick" value=""><br></td>
 	</tr>
 	<tr>
 	<td>CONTRASE&Ntilde;A</td>

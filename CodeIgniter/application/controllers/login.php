@@ -21,7 +21,7 @@ class Login extends CI_Controller {
              if ($this->CRM_model->comprobar_usuario($_REQUEST['nick'], $_REQUEST['pass']))
              {  $data=$this->CRM_model->comprobar_usuario($_REQUEST['nick'], $_REQUEST['pass']);
                   $this->load->library('session');
-                   $this->session->set_userdata('username', $data['USER_NAME'] );
+                   $this->session->set_userdata($data);
                redirect("index.php/".$data['USER_TYPE_ID']."");
              }
              else
@@ -36,7 +36,8 @@ public function logout()
        {
            $this->load->helper('url');
            $this->load->library('session');
-           $this->session->unset_userdata('username');
+           $data=array('USER_NAME'=>'','USER_ID'=>'','USER_TYPE_ID'=>'','PASSWORD'=>'');
+           $this->session->unset_userdata($data);
            $this->session->sess_destroy();
            redirect("index.php/".login);
        }

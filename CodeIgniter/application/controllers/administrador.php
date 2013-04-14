@@ -11,8 +11,9 @@ class Administrador extends CI_Controller {
 	{
 		/*$this->load->helper('url');*/
 		$this->load->library('session');
-        $data=$this->session->all_userdata('username');
-        if($data['username']=='') redirect ('index.php/login');
+        $data=$this->session->all_userdata();
+        if($data['USER_NAME']=='') redirect ('index.php/login');
+        if($data['USER_TYPE_ID']!=1) redirect("index.php/".$data['USER_TYPE_ID']."");
 		$this->load->view('templates/header');
 		$this->load->view('templates/banner');
 		$this->load->view('admin/index');
