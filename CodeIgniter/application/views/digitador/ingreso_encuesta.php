@@ -1,37 +1,63 @@
+<script>
+  $(function(){
+    var autocompletar1 = new Array();
+    var autocompletar2 = new Array();
+    var autocompletar3 = new Array();
+    var autocompletar4 = new Array();
+
+	<?php
+    foreach ($query1->result() as $fila)
+		{   ?>
+		    autocompletar1.push('<?php echo $fila->INSTITUTION_NAME; ?>');
+ 	<?php }  
+    foreach ($query2->result() as $fila)
+		{   ?>
+		    autocompletar2.push('<?php echo $fila->VALUE_DESCRIPTION; ?>');
+ 	<?php } 
+    foreach ($query3->result() as $fila)
+		{   ?>
+		    autocompletar3.push('<?php echo $fila->CAREER_NAME; ?>');
+ 	<?php }  
+    foreach ($query4->result() as $fila)
+		{   ?>
+		    autocompletar4.push('<?php echo $fila->INSTITUTION_NAME; ?>');
+ 	<?php }  ?>
+     //Esto es un poco de php para obtener lo que necesitamos
+     
+     $("#colegio").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
+       source: autocompletar1 //Le decimos que nuestra fuente es el arreglo
+     });
+     $("#tecnico").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
+       source: autocompletar2 //Le decimos que nuestra fuente es el arreglo
+     });
+     $("#carrera1").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
+       source: autocompletar3 //Le decimos que nuestra fuente es el arreglo
+     });
+     $("#carrera2").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
+       source: autocompletar3 //Le decimos que nuestra fuente es el arreglo
+     });
+     $("#universidad1").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
+       source: autocompletar4 //Le decimos que nuestra fuente es el arreglo
+     });
+     $("#universidad2").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
+       source: autocompletar4 //Le decimos que nuestra fuente es el arreglo
+     });
+  });
+    </script> 
+<form action="<?php base_url()?>digitador/dato_encuesta" method="POST">
 <br>
 <fieldset>
  		 <legend >Informaci&oacute;n General</legend>
  		 <label class="fieldLabel"  >Fecha:</label>
- 		 <input class="formInputText" style="margin-left:40px;" type="text" name="fecha" id="fecha" value="" size="12" maxlength="10" tabindex="1"  />
+ 		 <input class="formInputText" style="margin-left:110px;" type="text" name="fecha" id="fecha" value="" size="12" maxlength="10" tabindex="1"  />
  		 <img src="<?php echo base_url(); ?>style/imagenes/calen.png">		
  		 <br>
- 		 <input class="fieldLabel" tabindex="3" style="margin-left:490px;" type="radio" name="group1" value="general">
- 		 <label class="fieldLabel"  >General</label><br>
  		 <label class="fieldLabel"  >Instituto: </label>
- 		 <select class="formSelect" style="margin-left:26px; width:300px;" name="instituto" id="instituto" size="" tabindex="2"
-	          onchange="chooseCountry(this.options[this.selectedIndex].text,'state')">
- 		 	<option>Instituto Nacional Texistepeque</option>
- 		 	<option>Instituto Tecnico de Exalumnos Salesianos</option>
- 		 	<option>Instituto Tecnico Ricaldone</option>
- 		 	<option>Instituto Tecnologico de Chalatenango ITCHA</option>
- 		 	<option>Instituto Tecnologico de Usulutan ITU</option>
- 		 	<option>Instituto Tecnologico Centroamericano El Salvador</option>
- 		 	<option>Colegio Angloamericano</option>
- 		 </select>
- 		 <label class="fieldLabel" style="margin-left:10px;" >Bachillerato:</label>
-		<br>
-		
-		
-		<input class="fieldLabel" tabindex="4" style="margin-left:490px;" type="radio"  name="group1"  value="opcion">
-		<label class="fieldLabel" >Tecnico</label>
-		<label class="fieldLabel" >Opcion:</label>
-		<select class="formSelect" name="opcion" id="opcion" size="1" tabindex="5"
-	          onchange="chooseCountry(this.options[this.selectedIndex].text,'state')">
-			<option>Automotriz</option>
-			<option>Contaduria Publica</option>
-			<option>Electronica</option>
-			<option>Electricidad</option>
-		</select>
+ 		 <input class="formInputText" tabindex="2" style="margin-left:95px;" type="text" name="colegio" id="colegio" value="" size="50" maxlength="50" />	
+ 		 <br>
+ 		 <label class="fieldLabel" style="margin-left:0px;" >Bachillerato(Opcion):</label>
+		 <input class="formInputText" tabindex="3" style="margin-left:27px;" type="text" name="tecnico" id="tecnico" value="" size="50" maxlength="50" />	
+		 <label class="fieldLabel" style="margin-left:0px; font-size:9px;" >Ej: General, Tecnico en computacion, etc</label>
 		<br>
 		<br>
 </fieldset>
@@ -39,21 +65,21 @@
 <fieldset>
  		 <legend >Informaci&oacute;n Personal</legend>
  		 <label class="fieldLabel"  >Nombre:</label>
- 		 <input class="formInputText" tabindex="6" style="margin-left:135px;" type="text" name="nombre" id="nombre" value="" size="50" maxlength="50" />	
+ 		 <input class="formInputText" tabindex="4" style="margin-left:135px;" type="text" name="nombre" id="nombre" value="" size="50" maxlength="50" />	
  		 <br>
  		 <label class="fieldLabel"  >Email:</label>
- 		 <input class="formInputText" tabindex="7" style="margin-left:148px;" type="text" name="email" id="email" value="" size="50" maxlength="50"  />
+ 		 <input class="formInputText" tabindex="5" style="margin-left:148px;" type="text" name="email" id="email" value="" size="50" maxlength="50"  />
  		 <br>
  		 <label class="fieldLabel"  >Direccion:</label>
- 		 <input class="formInputText" tabindex="8" style="margin-left:125px;" type="text" name="direccion" id="direccion" value="" size="50" maxlength="50"   />
+ 		 <input class="formInputText" tabindex="6" style="margin-left:125px;" type="text" name="direccion" id="direccion" value="" size="50" maxlength="50"   />
  		 <br>
  		 <label class="fieldLabel"  >Nombre del Padre o Madre:</label>
- 		 <input class="formInputText" tabindex="9" style="margin-left:27px;" type="text" name="nombrefamilia" id="nombrefamilia" value="" size="50" maxlength="50"   />
+ 		 <input class="formInputText" tabindex="7" style="margin-left:27px;" type="text" name="nombrefamilia" id="nombrefamilia" value="" size="50" maxlength="50"   />
  		 <label class="fieldLabel" style="margin-left:25px;" >Tel:</label>
- 		 <input class="formInputText" tabindex="10" style="margin-left:1px;" type="text" name="tel" id="tel" value="" size="10" maxlength="8"  />
+ 		 <input class="formInputText" tabindex="8" style="margin-left:1px;" type="text" name="tel" id="tel" value="" size="10" maxlength="8"  />
  		 <br>
  		 <label class="fieldLabel"  >Lugar de trabajo:</label>
- 		 <input class="formInputText" tabindex="11" style="margin-left:85px;" type="text" name="trabajo" id="trabajo" value="" size="50" maxlength="50"   />		
+ 		 <input class="formInputText" tabindex="9" style="margin-left:85px;" type="text" name="trabajo" id="trabajo" value="" size="50" maxlength="50"   />		
  		 <br>
  		 <br>
 </fieldset> 
@@ -62,71 +88,51 @@
  		 <legend >Informaci&oacute;n</legend>
  		 <label class="fieldLabel"  >Carreras que te gustaria estudiar:</label>
  		 <label class="fieldLabel"  style="margin-left:36px;">Op. 1</label>
- 		 <select class="formSelect" name="opcioncarrera" id="opcioncarrera1" size="1" tabindex="12"
-	          onchange="chooseCountry(this.options[this.selectedIndex].text,'state')">
-			<option>Ingenieria en ciencias de la computacion</option>
-			<option>Ingenieria en ciencias </option>
-			<option>Ingenieria en computacion</option>
-		</select>
-		<br>
-		<label class="fieldLabel"  style="margin-left:239px;">Op. 2</label>
-		<select class="formSelect" name="opcioncarrera" id="opcioncarrera2" size="1" tabindex="13"
-	          onchange="chooseCountry(this.options[this.selectedIndex].text,'state')">
-			<option>Ingenieria en ciencias de la computacion</option>
-			<option>Ingenieria en ciencias </option>
-			<option>Ingenieria en computacion</option>
-		</select>
+ 		 <input class="formInputText" tabindex="10" style="margin-left:0px;" type="text" name="carrera1" id="carrera1" value="" size="50" maxlength="50" />	
+		 <br>
+		 <label class="fieldLabel"  style="margin-left:239px;">Op. 2</label>
+		 <input class="formInputText" tabindex="11" style="margin-left:0px;" type="text" name="carrera2" id="carrera2" value="" size="50" maxlength="50" />	
  		 <br><br>
  		 <label class="fieldLabel"  >En que universidad le gustaria estudiar:</label>
  		 <label class="fieldLabel"  >Op. 1</label>
- 		 <select class="formSelect" name="opcionu" id="opcionu1" size="1" tabindex="14"
-	          onchange="chooseCountry(this.options[this.selectedIndex].text,'state')">
-			<option>Ingenieria en ciencias de la computacion</option>
-			<option>Ingenieria en ciencias </option>
-			<option>Ingenieria en computacion</option>
-		</select>
-		<br>
-		<label class="fieldLabel"  style="margin-left:239px;">Op. 2</label>
-		<select class="formSelect" name="opcionu" id="opcionu2" size="1" tabindex="15"
-	          onchange="chooseCountry(this.options[this.selectedIndex].text,'state')">
-			<option>Ingenieria en ciencias de la computacion</option>
-			<option>Ingenieria en ciencias </option>
-			<option>Ingenieria en computacion</option>
-		</select>
+ 		 <input class="formInputText" tabindex="12" style="margin-left:0px;" type="text" name="universidad1" id="universidad1" value="" size="50" maxlength="50" />	
+		 <br>
+		 <label class="fieldLabel"  style="margin-left:239px;">Op. 2</label>
+		 <input class="formInputText" tabindex="13" style="margin-left:0px;" type="text" name="universidad2" id="universidad2" value="" size="50" maxlength="50" />	
  		 <br><br>
  		 <label class="fieldLabel"  >¿Que has escuchado de la UDB?</label>
  		 <br>
- 		 <input tabindex="16" style="margin-left:25px;" type="checkbox" name="escuchado" id="escuchado1"  />
+ 		 <input tabindex="16" style="margin-left:25px;" type="checkbox" name="escuchado[]" id="escuchado" value="calidad docente"  />
  		 <label class="fieldLabel"  >Calidad Docente</label>
- 		 <input tabindex="17" style="margin-left:49px;" type="checkbox" name="escuchado" id="escuchado2"  />
+ 		 <input tabindex="17" style="margin-left:49px;" type="checkbox" name="escuchado[]" id="escuchado" value="formacion cristiana" />
  		 <label class="fieldLabel"  >Formacion Cristiana</label>
- 		 <input tabindex="18" style="margin-left:52px;" type="checkbox" name="escuchado" id="escuchado3"  />
+ 		 <input tabindex="18" style="margin-left:52px;" type="checkbox" name="escuchado[]" id="escuchado" value="tecnologia" />
  		 <label class="fieldLabel"  >Tecnologia</label>
- 		 <input tabindex="19" style="margin-left:25px;" type="checkbox" name="escuchado" id="escuchado4"  />
+ 		 <input tabindex="19" style="margin-left:25px;" type="checkbox" name="escuchado[]" id="escuchado" value="acreditacion" />
  		 <label class="fieldLabel"  >Acreditacion</label>
  		 <br>
- 		 <input tabindex="20" style="margin-left:25px;" type="checkbox" name="escuchado" id="escuchado5"  />
+ 		 <input tabindex="20" style="margin-left:25px;" type="checkbox" name="escuchado[]" id="escuchado" value="carreras inovadoras"  />
  		 <label class="fieldLabel"  >Carreras Innovadoras</label>
- 		 <input tabindex="21" style="margin-left:25px;" type="checkbox" name="escuchado" id="escuchado6"  />
+ 		 <input tabindex="21" style="margin-left:25px;" type="checkbox" name="escuchado[]" id="escuchado" value="laboratorio de avanzada" />
  		 <label class="fieldLabel"  >Laboratoria de Avanzada</label>
- 		 <input tabindex="22" style="margin-left:25px;" type="checkbox" name="escuchado" id="escuchado7"  />
+ 		 <input tabindex="22" style="margin-left:25px;" type="checkbox" name="escuchado[]" id="escuchado" value="otras" />
  		 <label class="fieldLabel"  >Otras</label>
- 		 <input tabindex="23" style="margin-left:57px;" type="checkbox" name="escuchado" id="escuchado8"  />
+ 		 <input tabindex="23" style="margin-left:57px;" type="checkbox" name="escuchado[]" id="escuchado" value="nada" />
  		 <label class="fieldLabel"  >Nada</label>
  		 <br><br>
  		 <label class="fieldLabel"  >¿Que aspectos publicitarios y de promocion conoce de la UDB?</label>
  		 <br>
- 		 <input tabindex="24" style="margin-left:25px;" type="checkbox" name="publici" id="publici1"  />
+ 		 <input tabindex="24" style="margin-left:25px;" type="checkbox" name="publici[]" id="publici"  />
  		 <label class="fieldLabel"  >Radio</label>
- 		 <input tabindex="25" style="margin-left:25px;" type="checkbox" name="publici" id="publici2"  />
+ 		 <input tabindex="25" style="margin-left:25px;" type="checkbox" name="publici[]" id="publici"  />
  		 <label class="fieldLabel"  >Vallas publicitarias </label>
- 		 <input tabindex="26" style="margin-left:25px;" type="checkbox" name="publici" id="publici3"  />
+ 		 <input tabindex="26" style="margin-left:25px;" type="checkbox" name="publici[]" id="publici"  />
  		 <label class="fieldLabel"  >Prensa</label>
- 		 <input tabindex="27" style="margin-left:25px;" type="checkbox" name="publici" id="publici4"  />
+ 		 <input tabindex="27" style="margin-left:25px;" type="checkbox" name="publici[]" id="publici"  />
  		 <label class="fieldLabel"  >Vistitas a Colegios</label>
- 		 <input tabindex="28" style="margin-left:25px;" type="checkbox" name="publici" id="publici5"  />
+ 		 <input tabindex="28" style="margin-left:25px;" type="checkbox" name="publici[]" id="publici"  />
  		 <label class="fieldLabel"  >TV</label>
- 		 <input tabindex="29" style="margin-left:25px;" type="checkbox" name="publici" id="publici6"  />
+ 		 <input tabindex="29" style="margin-left:25px;" type="checkbox" name="publici[]" id="publici"  />
  		 <label class="fieldLabel"  >Otras</label>
  		 <br><br>
  		 <label class="fieldLabel"  >¿Como calificarias la guia vocacional recibida este dia?</label>
@@ -141,5 +147,8 @@
 		 <label class="fieldLabel" >Mala</label>
 		 <br>
 		 <br>
-		 <center><input type="button" value="Ingresar"/></center>
+
+		 <center><input type="submit" id="ingresar_encuesta" value="Ingresar"/></center>
 </fieldset>
+<br>
+</form>

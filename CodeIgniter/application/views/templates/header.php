@@ -10,9 +10,12 @@
 		<?php echo link_tag('jquery-ui-1.10.0.custom/css/ui-lightness/jquery-ui-1.10.0.custom.css');?>
 		<?php echo link_tag('style/formularios.css');?>
 		<?php echo link_tag('jquery-ui-1.10.0.custom/js/dist/jquery.jqplot.min.css');?>
+		<?php echo link_tag('style/jquery-ui.css');?>
+		<!--?php echo link_tag('style/estilo.css');?-->
+
 
 		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/jquery-1.9.0.js"></script>
-                <script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/jquery.jqplot.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/jquery.jqplot.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/plugins/jqplot.barRenderer.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/plugins/jqplot.donutRenderer.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/dist/plugins/jqplot.pieRenderer.min.js"></script>
@@ -24,6 +27,9 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/menu.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/lectura.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/escritura.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-ui.js"></script>
+    
 </head>
 <body><div id="wrapper">
 	

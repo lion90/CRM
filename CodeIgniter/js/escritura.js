@@ -6,6 +6,10 @@ $(document).ready(function()
   	{
   		$("#content").load("digitador/ing_encuesta");
  	 });
+  $("#ingresar_encuesta").click(function()
+    {
+      $("#content").load("digitador/ing_encuesta");
+   });
 
   $("#excel").click(function()
   	{
