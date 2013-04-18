@@ -13,16 +13,15 @@
   });
     </script>  
     
-    <h1 style="color:white">BIENVENIDO AL OPEN HOUSE</h1>
+    
+	<h1 style="margin-top:175px;text-align:center">BIENVENIDO AL OPEN HOUSE</h1>
 <?php echo validation_errors(); ?>
-<?php echo form_open('index.php/digitador/confirmar_openhouse');
+<?php echo form_open('index.php/digitador/confirmar_openhouse',array('id'=>'auto'));
 			   ?>
 	
-	<div id="auto"><br>
     <label class="fieldLabel" style="margin-left:20px;">Ingrese Nombre:</label>
-	<input id="cargar" type="text"  name="load" required /><input id="enviar" value="" type="submit">
-	</div>
+	<input id="cargar" type="text"  name="load" required />
+	<input id="enviar" value="" type="submit">
+	
 </form>
-	<div id="resultado">
-	</div>
-    </div>
+

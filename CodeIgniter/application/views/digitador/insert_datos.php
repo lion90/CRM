@@ -9,7 +9,7 @@
 $query=$this->crm_model->insert_open($names,$surname,$institution,$phone,$email,$medio);
 ?>
 
-<div id="content">
+<div id="auto" style="margin-top: 150px;">
 
 <h2>Su Registro fue Exitoso!!!</h2>
 <h1>BIENVENIDO A NUESTRO OPEN HOUSE </h1>

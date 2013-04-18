@@ -28,10 +28,13 @@ opacity: 0.8;
 cursor:pointer
 }
 #auto{
+margin-top: 25px;
+    
 /*position: relative;*/
 background: white;
 opacity: 0.8;
-width: 600px;
+text-align: center;
+/*width: 600px;*/
 /*height: 200px;*/
 border-radius: 8px;
 box-shadow: 0 0 10px 5px black;
