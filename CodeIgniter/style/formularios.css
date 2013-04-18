@@ -51,6 +51,18 @@ input.formInputText {
    width:auto;
 }
 
+input.formInputText2 {
+   font-size:12px;
+   color: black;
+   background-color:white;
+   padding:2px;
+   margin-right:3px;
+   margin-bottom:5px;
+   border-radius:2px;
+   width:auto;
+   float: right;
+}
+
 input.formInputText:hover {
    background-color:#47A9D7;
    border:solid 2px black;

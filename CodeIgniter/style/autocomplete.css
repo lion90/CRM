@@ -1,7 +1,5 @@
 #cargar{
-margin-top: 75px;
-margin-left: 25px;
-margin-bottom: 75px;
+margin: 20px;
 width: 500px;
 height: 30px;
 border-radius: 3px;
@@ -22,7 +20,7 @@ text-align: left;
 }
 #enviar{
 background: #30FFF9 url(imagenes/enviar.png);
-margin-left: 20px;
+/*margin-left: 20px;*/
 height:32px;
 width: 32px;
 border-radius: 5px;
@@ -30,11 +28,11 @@ opacity: 0.8;
 cursor:pointer
 }
 #auto{
-position: relative;
+/*position: relative;*/
 background: white;
 opacity: 0.8;
 width: 600px;
-height: 200px;
+/*height: 200px;*/
 border-radius: 8px;
 box-shadow: 0 0 10px 5px black;
 }

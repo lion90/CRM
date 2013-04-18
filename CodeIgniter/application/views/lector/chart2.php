@@ -1,5 +1,5 @@
 <div id="chart">
-	<div style="padding-bottom:500px"></div>
+	<div style="padding-bottom:1000px"></div>
 <?php
 $carreras="";
 $op1="";
