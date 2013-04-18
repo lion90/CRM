@@ -4,28 +4,15 @@ $nombre=trim($data[0]);
 $query=$this->crm_model->confirmar_datos($nombre);
 
 ?>
- <script>
-  $(function(){
-    var autocompletar = new Array();
-    
-    <?php //Esto es un poco de php para obtener lo que necesitamos
-    $query2=$this->crm_model->institucionesautocomplete();
-		foreach ($query2 as $row) { //usamos count para saber cuantos elementos hay ?>
-    autocompletar.push('<?php echo $row['INSTITUTION_NAME']; ?>');
-    <?php }  ?>
-    
-     $("#cargar_inst").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
-    source: autocompletar //Le decimos que nuestra fuente es el arreglo
-	});
-  
-     $("#cargar_inst2").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
-    source: autocompletar //Le decimos que nuestra fuente es el arreglo
-	});
-    
+<datalist id="autocomplete">
+    <?php 
+        $query2=$this->crm_model->institucionesautocomplete();
+        foreach ($query2 as $row) {
+            echo "<option value=\"".$row['INSTITUTION_NAME']."\">";
+        }
 
-  });
-    </script> 
-
+     ?>
+ </datalist> 
 <div id="datos">
 	<div id="info">
 <?php
@@ -89,7 +76,7 @@ echo
 	<label class="fieldLabel">Apellido:</label>
 	<input class="formInputText2" type="text" value="" size="50" maxlength="50" name="surname"  required /><br><br>
 	<label class="fieldLabel">Instituci&oacute;n:</label>
-	<input id="cargar_inst2" class="formInputText2" type="text" value="" size="50" maxlength="50"  name="institution"  required /><br><br>
+	<input id="cargar_inst" class="formInputText2" type="text" value="" size="50" maxlength="50"  name="institution"  required list="autocomplete" /><br><br>
 	<label class="fieldLabel">Tel&eacute;fono:</label>
 	<input class="formInputText2" type="text" value="" size="50" maxlength="50" name="phone"  required /><br><br>	
 	<label class="fieldLabel">Email:</label>
@@ -117,7 +104,7 @@ echo
 	<label class="fieldLabel">Apellido:</label>
 	<input class="formInputText2" type="text" value="" size="50" maxlength="50" name="surname" required /><br><br>
 	<label class="fieldLabel">Instituci&oacute;n:</label>
-	<input id="cargar_inst" class="formInputText2" type="text" value="" size="50" maxlength="50" name="institution" required  /><br><br>
+	<input id="cargar_inst" class="formInputText2" type="text" value="" size="50" maxlength="50" name="institution" required list="autocomplete"  /><br><br>
 	<label class="fieldLabel">Tel&eacute;fono:</label>
 	<input class="formInputText2" type="text" value="" size="50" maxlength="50" name="phone" required /><br><br>	
 	<label class="fieldLabel">Email:</label>

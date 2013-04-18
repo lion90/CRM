@@ -13,7 +13,7 @@ $query=$this->crm_model->insert_open($names,$surname,$institution,$phone,$email,
 
 <h2>Su Registro fue Exitoso!!!</h2>
 <h1>BIENVENIDO A NUESTRO OPEN HOUSE </h1>
-<h2><?php echo strtoupper($names); ?></h2>
+<h2><?php echo $names; ?></h2>
 <a href="ing_openhouse">Regresar al Inicio</a>
 
 </div>
