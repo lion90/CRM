@@ -16,6 +16,26 @@ $(document).ready(function()
   		$("#content").load("administrador/excel");
  	 });
 
+$("#btnconfyes").click(function()
+    {
+      /*$.post("editar_datos",{
+        nombre: $("#txthdd").val()
+      })*/
+     /* $("#datos").load("editar_datos");*/
+     $("#areyou").hide();
+     $("#info").hide();
+     $("#editar_info").show();
+     $("#ingresar_info").hide();
+   });
+  $("#btnconfno").click(function()
+    {
+    $("#areyou").hide();
+     $("#info").hide();
+     $("#editar_info").hide();
+     $("#ingresar_info").show();
+
+   });
+
   $("#OH").click(function()
   {
 	window.open("digitador/ing_openhouse")

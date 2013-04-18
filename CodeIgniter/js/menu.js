@@ -4,43 +4,25 @@ $(document).ready(function ()
 
 
 {
-  $('.op1Over2').mouseover(function()
-  {
-  	$(this).css("width","178").css("border-radius","4px").css("border","1px solid");
-  })
+  
+				//cache nav
+				var nav = $("#menu");
+				
+				//add indicator and hovers to submenu parents
+				nav.find("li").each(function() {
+					if ($(this).find("ul").length > 0) {
+						$("<span>").text("^").appendTo($(this).children(":first"));
 
-  .mouseout(function()
-  {
-    $(this).css("width", "170px");
-  });
-
-  $('#accordion a.item').click(function () 
-  {
-			$('#accordion li').children('ul').slideUp('fast');
-			$('#accordion a.item').each(function () 
-			{
-				if ($(this).attr('rel')!='') 
-				{
-					$(this).removeClass($(this).attr('rel') + 'Over');	
-				}
-			});
-
-			$('#accordion .s').mouseover(function()
-				{
-					$(this).css("background-color","#BADCE9").css("color","black").css("width","142px").css("border-radius","0px").css("height","auto");
-
-				})
+						//show subnav on hover
+						$(this).mouseenter(function() {
+							$(this).find("ul").stop(true, true).slideDown();
+						});
+						
+						//hide submenus on exit
+						$(this).mouseleave(function() {
+							$(this).find("ul").stop(true, true).slideUp();
+						});
+					}
+				});
 			
-			.mouseout(function()
-			{
-    			$(this).css("background-color","white");
-  			});
-		
-			$(this).siblings('ul').slideDown('fast');
-			$(this).addClass($(this).attr('rel') + 'Over');			
-			
-			return false;
-
-		});
-	
 });

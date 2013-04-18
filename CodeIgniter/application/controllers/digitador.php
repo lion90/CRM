@@ -1,7 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Digitador extends CI_Controller {
-	
+
+	public function __construct()
+   {
+      parent::__construct();
+      $this->load->model('crm_model');
+   }	
 	public function index()
 	{
 		$this->load->helper('url');
@@ -29,60 +34,73 @@ class Digitador extends CI_Controller {
 	}
 		public function dato_encuesta(){
 
-		$this->load->model("encuesta","en"); 
-		 
-		$fecha=$this->input->post('fecha',true);
+			$this->load->model("encuesta","en"); 
+			 
+			$fecha=$this->input->post('fecha',true);
 
-		$query1 =  $this->en->buscar_colegio($this->input->post('colegio',true));
-		foreach ($query1->result() as $fila)
-		{    
-		    $col=$fila->INSTITUTION_ID;
- 	    }  
+			$query1 =  $this->en->buscar_colegio($this->input->post('colegio',true));
+			foreach ($query1->result() as $fila)
+			{    
+			    $col=$fila->INSTITUTION_ID;
+	 	    }  
 
-		$query2 =  $this->en->buscar_tecnico($this->input->post('tecnico',true));
-		foreach ($query2->result() as $fila)
-		{    
-		    $tec=$fila->VALUE_CODE;
- 	    }  
+			$query2 =  $this->en->buscar_tecnico($this->input->post('tecnico',true));
+			foreach ($query2->result() as $fila)
+			{    
+			    $tec=$fila->VALUE_CODE;
+	 	    }  
 
-		$nombre=$this->input->post('nombre',true);
-		$email=$this->input->post('email',true);
-		$direccion=$this->input->post('direccion',true);
-		$nompapa=$this->input->post('nombrefamilia',true);
-		$tel=$this->input->post('tel',true);
-		$trabajo=$this->input->post('trabajo',true);
-
-
-		$query3 =  $this->en->buscar_carrera($this->input->post('carrera1',true));
-		foreach ($query3->result() as $fila)
-		{    
-		    $car1=$fila->CAREER_ID;
- 	    }  
+			$nombre=$this->input->post('nombre',true);
+			$email=$this->input->post('email',true);
+			$direccion=$this->input->post('direccion',true);
+			$nompapa=$this->input->post('nombrefamilia',true);
+			$tel=$this->input->post('tel',true);
+			$trabajo=$this->input->post('trabajo',true);
 
 
-
-		$query4 =  $this->en->buscar_carrera($this->input->post('carrera2',true));
-		foreach ($query4->result() as $fila)
-		{    
-		    $car2=$fila->CAREER_ID;
- 	    }  
-
-
-		$query5 =  $this->en->buscar_colegio($this->input->post('universidad1',true));
-		foreach ($query5->result() as $fila)
-		{    
-		    $uni1=$fila->INSTITUTION_ID;
- 	    }  
+			$query3 =  $this->en->buscar_carrera($this->input->post('carrera1',true));
+			foreach ($query3->result() as $fila)
+			{    
+			    $car1=$fila->CAREER_ID;
+	 	    }  
 
 
-		$query6 =  $this->en->buscar_colegio($this->input->post('universidad2',true));
-		foreach ($query6->result() as $fila)
-		{    
-		    $uni2=$fila->INSTITUTION_ID;
- 	    }  
-    	$query7=$this->en->ingresar_cliente($col,$nombre,$email,$direccion,$nompapa,$tel,$tec);
-    	
-	    redirect("index.php/3");
+
+			$query4 =  $this->en->buscar_carrera($this->input->post('carrera2',true));
+			foreach ($query4->result() as $fila)
+			{    
+			    $car2=$fila->CAREER_ID;
+	 	    }  
+
+
+			$query5 =  $this->en->buscar_colegio($this->input->post('universidad1',true));
+			foreach ($query5->result() as $fila)
+			{    
+			    $uni1=$fila->INSTITUTION_ID;
+	 	    }  
+
+
+			$query6 =  $this->en->buscar_colegio($this->input->post('universidad2',true));
+			foreach ($query6->result() as $fila)
+			{    
+			    $uni2=$fila->INSTITUTION_ID;
+	 	    }  
+	    	$query7=$this->en->ingresar_cliente($col,$nombre,$email,$direccion,$nompapa,$tel,$tec);
+	    	
+		    redirect("index.php/3");
+	}
+
+			public function confirmar_openhouse(){
+		$this->load->view('templates/header');
+		$this->load->view('digitador/confirmar_openhouse');
+	}
+	public function update_datos(){
+		$this->load->view('templates/header');
+		$this->load->view('digitador/update_datos');
+	}
+	public function insert_datos(){
+		$this->load->view('templates/header');
+		$this->load->view('digitador/insert_datos');
 	}
 }
 ?>

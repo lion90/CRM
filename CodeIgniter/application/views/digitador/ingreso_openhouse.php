@@ -1,9 +1,28 @@
+ <script>
+  $(function(){
+    var autocompletar = new Array();
+    <?php //Esto es un poco de php para obtener lo que necesitamos
+    $query=$this->crm_model->nombreautocomplete();
+		foreach ($query as $row) { //usamos count para saber cuantos elementos hay ?>
+    autocompletar.push('<?php echo $row['NAMES'].' - '.$row['INSTITUTION_NAME']; ?>');
+    <?php }  ?>
+    $("#cargar").autocomplete({ //Usamos el ID de la caja de texto donde lo queremos
+    source: autocompletar //Le decimos que nuestra fuente es el arreglo
+    });
+     
+  });
+    </script>  
+    
+    <h1 style="color:white">BIENVENIDO AL OPEN HOUSE</h1>
 <?php echo validation_errors(); ?>
-<?php echo form_open('digitador/confirmar_openhouse');
+<?php echo form_open('index.php/digitador/confirmar_openhouse');
 			   ?>
-	<h1 style="color:white">BIENVENIDO AL OPEN HOUSE</h1>
-	<div id="auto">
-	<input id="cargar" type="text" value="INGRESE SU  NOMBRE..." name="load" onblur="if(this.value==''){this.value='INGRESE SU  NOMBRE...'}" onfocus="if(this.value=='INGRESE SU  NOMBRE...'){this.value=''}" /><input id="enviar" value="" type="submit">
+	
+	<div id="auto"><br>
+    <label class="fieldLabel" style="margin-left:20px;">Ingrese Nombre:</label>
+	<input id="cargar" type="text"  name="load" required /><input id="enviar" value="" type="submit">
 	</div>
+</form>
 	<div id="resultado">
 	</div>
+    </div>

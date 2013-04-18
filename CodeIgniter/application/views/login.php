@@ -11,11 +11,11 @@
 	<td><table>
 	<tr>
 	<td>USUARIO</td>
-	<td><input class="input_user" type="text" name="nick" id="nick" value=""><br></td>
+	<td><input class="input_user" type="text" name="nick" id="nick" value="" required><br></td>
 	</tr>
 	<tr>
 	<td>CONTRASE&Ntilde;A</td>
-	<td><input class="input_pass" type="password" name="pass" onkeypress="validar(event);" id="pass" value=""></td>
+	<td><input class="input_pass" type="password" name="pass" onkeypress="validar(event);" id="pass" value="" required></td>
 	</tr>
 	<tr> <td colspan="2" align="right">
             <div class="demo">
