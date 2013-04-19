@@ -194,6 +194,7 @@ function graphic4(a1,a2){
 
 $(document).ready(function() 
 {
+  //GRAFICAS
   $("#howenc").click(function()
     {
       $("#content").load("lector/graph1_model");
@@ -210,5 +211,63 @@ $("#howopen").click(function()
     {
       $("#content").load("lector/graph4_model");
    });
+
+
+  //EMAILS
+  $("#x_facultad").click(function()
+    {
+      $("#content").load("lector/emails_facultad");
+    
+
+   });
+   $("#x_carrera").click(function()
+    {
+      $("#content").load("lector/emails_carrera");
+   });
+   $("#x_etapa").click(function()
+    {
+      $("#content").load("lector/emails_etapa");
+   });
+
+
+   $("#load_email").click(function()
+    {
+      var facultad =$("#select_facultades").val();
+      $("#load_emails").load("lector/get_emails_facultad/"+facultad);
+   });
+
+   $("#load_email_etapa").click(function()
+    {
+      var etapa =$("#select_etapas").val();
+      $("#load_emails").load("lector/get_emails_etapa/"+etapa);
+   });
+
+    $("#send1").click(function()
+    { 
+
+      var facultad =$("#select_facultades").val();
+      var asunto =$("#asunto").val();
+      if(asunto=="Agregar Asunto..."){
+        asunto="Sin Asunto";
+      }
+      var oEditor = CKEDITOR.instances.msj;
+      var contenido = oEditor.getData();
+      asunto=asunto.replace(/\s/g,'-');
+      asunto=asunto.replace(/[.]/g,'_');
+      var mensaje =$("#msj").val();
+      mensaje=mensaje.replace(/\s/g,'-');
+      mensaje=mensaje.replace('[.]','_');
+      $("#aux").load("lector/send_emails_facultad/"+facultad+"/"+asunto+"/"+contenido);
+   });
+  $("#send").click(function()
+    { 
+      var oEditor = CKEDITOR.instances.msj;
+      var contenido = oEditor.getData();
+      $('#msj').val(contenido);
+      alert("Enviando Mensaje");
+   });
+    $("#adjuntar").click(function(){
+      $("#div_adjuntar").fadeToggle(1500);
+    });
   });
 

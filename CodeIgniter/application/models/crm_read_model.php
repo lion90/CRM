@@ -79,10 +79,53 @@ GROUP BY UNIVERSIDAD ORDER BY TOTAL_OPCIONES ASC");
         return $query->row_array();
 
    }
+   
+    public function listado_facultad()
+   {  $output='';
+      $query = $this->db->query(" SELECT ID_FACULTY,FACULTY_NAME FROM faculties");
+      if($query->num_rows()>0){
+      foreach ($query->result() as $fila) {
+        $output .="<option id=".$fila->ID_FACULTY." value=".$fila->ID_FACULTY .">".$fila->FACULTY_NAME ."</option>";
+      }
+      return $output;
+    }
+}
+    public function get_emails_facultad($op)
+   { 
+
+    $query = $this->db->query(" SELECT T1.CUSTOMER_EMAIL CORREO
+FROM CUSTOMERS T1
+INNER JOIN IEM_SURVEY T2 ON T1.CUSTOMER_ID=T2.CUSTOMER_ID
+INNER JOIN IEM_CAREERS T3 ON T2.IEM_SURVEY_ID=T3.IEM_SURVEY_ID
+INNER JOIN CAREERS T4 ON T3.CAREER_ID=T4.CAREER_ID
+INNER JOIN FACULTIES T5 ON T4.ID_FACULTY=T5.ID_FACULTY
+WHERE T5.ID_FACULTY =".$op);
+        return $query->result_array();
 
 
+   }
+   public function get_emails_etapa($op)
+   { 
+$query="";
 
+if($op==1){
+$query = $this->db->query("SELECT CUSTOMER_EMAIL CORREO
+FROM CUSTOMERS WHERE SURVEY_STATUS='X' 
+AND OPEN_HOUSE_STATUS='' 
+AND PACKAGE_STATUS='' 
+AND REGISTRATION_STATUS=''");
+return $query->result_array();
+}
+elseif($op==2){
+$query = $this->db->query("SELECT CUSTOMER_EMAIL CORREO
+FROM CUSTOMERS WHERE SURVEY_STATUS='' 
+AND OPEN_HOUSE_STATUS='X' 
+AND PACKAGE_STATUS='' 
+AND REGISTRATION_STATUS=''");
+return $query->result_array();
+}
   
+}
 
 }
 ?>

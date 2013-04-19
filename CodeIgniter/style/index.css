@@ -188,3 +188,60 @@ width: 400px;
 margin: 150px auto;
 box-shadow: 0 0 10px 5px black;
 }
+#msj{
+    height: 400px;
+    width:  600px;
+}
+#asunto{
+    height: 20px;
+    width:  650px;
+}
+#load{
+width: 300px;
+margin-top: 0px;    
+}
+#load_mail{
+    background: url(imagenes/load.ico);
+    width: 26px;
+    height: 26px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+#adjuntar{
+    background: url(imagenes/email_attach.png);
+    width: 33px;
+    height: 34px;
+    border-radius: 20px;
+    cursor:  pointer;
+    /*border: 1px solid black;*/
+}
+
+.button {
+    -moz-box-shadow:inset 0px 0px 4px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 0px 4px 0px #ffffff;
+    box-shadow:inset 0px 0px 4px 0px #ffffff;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #24c0f0), color-stop(1, #1d4cc2) );
+    background:-moz-linear-gradient( center top, #24c0f0 5%, #1d4cc2 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#24c0f0', endColorstr='#1d4cc2');
+    background-color:#24c0f0;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:0px solid #0a060a;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:13px;
+    font-weight:normal;
+    padding:2px 3px;
+    text-decoration:none;
+    text-shadow:1px -1px 50px #ffffff;
+}.button:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1d4cc2), color-stop(1, #24c0f0) );
+    background:-moz-linear-gradient( center top, #1d4cc2 5%, #24c0f0 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1d4cc2', endColorstr='#24c0f0');
+    background-color:#1d4cc2;
+}.button:active {
+    position:relative;
+    top:1px;
+}

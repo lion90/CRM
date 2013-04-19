@@ -1,0 +1,1 @@
+<h3>Destinatarios:</h3><?php echo $destinatarios;?>

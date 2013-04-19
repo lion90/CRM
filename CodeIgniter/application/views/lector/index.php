@@ -16,11 +16,11 @@
 		<li class="ultimo"><a href="#">Inscripcion</a></li>
 	</ul>	
 </li>
-<li><a href="#">Correos</a>
+<li><a href="#">Enviar Correos</a>
 	<ul>
-		<li><a href="#">Open House</a></li>
-		<li><a href="#">Paquete</a></li>
-		<li class="ultimo"><a href="#">Inscripcion</a></li>
+		<li><a id="x_facultad" href="#">Por Facultad</a></li>
+		<!--li><a id="x_carrera" href="#">Por Carrera</a></li-->
+		<li class="ultimo"><a id="x_etapa" href="#">Por Etapa</a></li>
 	</ul>	
 </li>
 
@@ -28,4 +28,6 @@
 </nav>
 <div id="content">
 	<h1 >Lector</h1>
+</div>
+<div id="aux" style="visibility:hidden">
 </div>
