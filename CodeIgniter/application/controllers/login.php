@@ -39,7 +39,7 @@ public function logout()
            $data=array('USER_NAME'=>'','USER_ID'=>'','USER_TYPE_ID'=>'','PASSWORD'=>'');
            $this->session->unset_userdata($data);
            $this->session->sess_destroy();
-           redirect("index.php/".login);
+           redirect("index.php/login");
        }
 
 }

@@ -16,6 +16,11 @@ $(document).ready(function()
   		$("#content").load("administrador/excel");
  	 });
 
+$("#subir").click(function()
+  	{
+  		$("#content").load("administrador/do_upload");
+ 	 });
+
 $("#btnconfyes").click(function()
     {
       /*$.post("editar_datos",{

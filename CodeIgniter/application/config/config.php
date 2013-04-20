@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:81/CRM/CodeIgniter/';
+$config['base_url']	= 'http://localhost/CRM/CodeIgniter/';
 
 /*
 |--------------------------------------------------------------------------

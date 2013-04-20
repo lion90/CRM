@@ -15,8 +15,6 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/menu.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/lectura.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/escritura.js"></script>
-		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/tiny_mce/tiny_mce.js">
-		</script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/ckeditor/ckeditor.js"></script>
 		
 </head>
