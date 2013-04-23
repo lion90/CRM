@@ -9,8 +9,8 @@ class Prueba_model extends CI_Model {
         public function set_excel($data)
         {
         
-        $this->db->insert('customers',$data);
-        return $this->affected_rows();
+        $query= $this->db->insert('customers',$data);
+        return $this->db->affected_rows($query);
         }
 
 
@@ -26,16 +26,14 @@ class Prueba_model extends CI_Model {
 
         }
 
-         public function verificar_id_customer($id)
+         public function verificar_package_status($id)
         {
+            $estado ='X';
                 
-                $this->db->select('customer_id');
-                $this->db->where('customer_id',$id);
+                $this->db->select('package_status');
+                $this->db->where('customer_id',$id,'package_status',$estado);
                 $query = $this->db->get('customers'); 
                 return $query->row_array();
-
-
-
         }
 
         public function verificar_package($customer_id)
@@ -51,8 +49,8 @@ class Prueba_model extends CI_Model {
         public function update_customer($id)
         {
             $this->db->where('customer_id',$id);
-            $this->db->update('customers',array('package_status'=>'X'));
-
+            $query=$this->db->update('customers',array('package_status'=>'X'));
+            return $this->db->affected_rows($query);
 
         }
 
@@ -63,17 +61,9 @@ class Prueba_model extends CI_Model {
 
         public function ingresar_package($data)
         {
+
             $query= $this->db->insert('package_sales',$data);
             return $this->db->affected_rows($query);
-
-        }
-
-        public function obtener_customer($nombre)
-        {
-                $this->db->select('customer_id');
-                $this->db->where('names',$nombre);
-                $query = $this->db->get('customers');
-                return $query->row_array();
 
         }
 

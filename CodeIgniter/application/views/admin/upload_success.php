@@ -1,20 +1,23 @@
-<html>
-<head>
-<title>Upload Form</title>
-</head>
-<body>
+<fieldset style="width:500px;border-radius:5px ">
+<legend>Upload</legend>
+<br />
 
-
+<div style="color:black">"
 <?php
-
-	echo "<h3>Archivo Subido Exitosamente</h3>";
- 	echo "<div>Nombre del Archivo Cargado :</div>";
- 	echo "<div>Extension del Archivo Cargado :</div>";
- 	echo "<div>Error :".$info."</div>";
+	
+	echo "<center><h3>Archivo Subido Exitosamente</h3>";
+ 	echo "<div>Paquetes Ingresados: ".$pack_in."</div>";
+ 	echo "<div>Clientes Actualizados: ".$customer_up." </div>";
 
 ?>
+</div>
+</center>
+<div><center>
 
-<p><?php echo anchor('prueba', 'Upload Another File!'); ?></p>
+<p><?php echo anchor('index.php/administrador/do_upload', 'Desea Subir Otro Archivo!'); ?></p>
+<p><?php echo anchor('index.php/1', 'Cancelar!'); ?></p>
 
-</body>
-</html>
+</div>
+</fieldset>
+
+</form>
