@@ -17,8 +17,16 @@ $(document).ready(function()
  	 });
 
 $("#subir").click(function()
+    {
+      $("#content").load("administrador/do_upload");
+   });
+$("#addcustomer").click(function()
+    {
+      $("#content").load("recepcionista/ingresar_cliente");
+   });
+$("#modcustomer").click(function()
   	{
-  		$("#content").load("administrador/do_upload");
+  		$("#content").load("recepcionista/modificar_cliente");
  	 });
 
 $("#btnconfyes").click(function()
