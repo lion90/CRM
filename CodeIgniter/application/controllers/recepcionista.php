@@ -28,7 +28,7 @@ class Recepcionista extends CI_Controller {
         $data=$this->session->all_userdata();
         if($data['USER_NAME']=='') redirect ('index.php/login');
         if($data['USER_TYPE_ID']!=4) redirect("index.php/".$data['USER_TYPE_ID']."");
-		$this->load->view('templates/header');
+		/*$this->load->view('templates/header');*/
 		$this->load->view('recepcionista/ingresar_cliente');
 	}
 	public function modificar_cliente(){
@@ -36,7 +36,7 @@ class Recepcionista extends CI_Controller {
         $data=$this->session->all_userdata();
         if($data['USER_NAME']=='') redirect ('index.php/login');
         if($data['USER_TYPE_ID']!=4) redirect("index.php/".$data['USER_TYPE_ID']."");
-		$this->load->view('templates/header');
+		/*$this->load->view('templates/header');*/
 		$this->load->view('recepcionista/modificar_cliente');
 	}
 
@@ -45,7 +45,7 @@ class Recepcionista extends CI_Controller {
         $data=$this->session->all_userdata();
         if($data['USER_NAME']=='') redirect ('index.php/login');
         if($data['USER_TYPE_ID']!=4) redirect("index.php/".$data['USER_TYPE_ID']."");
-		$this->load->view('templates/header');
+		/*$this->load->view('templates/header');*/
 		$this->load->view('recepcionista/ingresar_cliente');
 	}
 	public function update_datos(){

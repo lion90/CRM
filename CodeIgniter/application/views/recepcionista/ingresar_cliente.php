@@ -1,3 +1,6 @@
+
+<div id="datos2">
+
 <datalist id="autocomplete">
     <?php 
         $query2=$this->crm_model->institucionesautocomplete();
@@ -7,27 +10,8 @@
 
      ?>
  </datalist> 
-<?php 
-if(isset($_POST['names']) and isset($_POST['surname']) and isset($_POST['institution']) and isset($_POST['phone']) and isset($_POST['email']) and isset($_POST['medio']))
-{
- $names=trim($_POST['names']);
- $surname=trim($_POST['surname']);
- $institution=trim($_POST['institution']);
- $phone=trim($_POST['phone']);
- $email=trim($_POST['email']);
- $medio=$_POST['medio'];
+<form id="registrar_info" accept-charset="utf-8"  action="http://localhost:81/CRM/CodeIgniter/index.php/recepcionista/insert_datos">
 
-$query=$this->crm_model->insert_open($names,$surname,$institution,$phone,$email,$medio);
-
- echo "<h3>Cliente Ingresado Exitosamente</h3>";
- redirect('index.php/recepcionista');
-}
-?>
-<div id="datos">
-<?php echo form_open('index.php/recepcionista/insert_datos',array('id'=>'registrar_info'));
-			   
-
-			   ?>
 	<center>
 	<h1>REGISTRO</h1>		
 	</center>
@@ -52,4 +36,48 @@ $query=$this->crm_model->insert_open($names,$surname,$institution,$phone,$email,
 </select><br><br>
 	<input id="btninsert" value="Registrar" type="submit">
 </form>
+<?php 
+if(isset($_POST['names']) and isset($_POST['surname']) and isset($_POST['institution']) and isset($_POST['phone']) and isset($_POST['email']) and isset($_POST['medio']))
+{
+ $names=trim($_POST['names']);
+ $surname=trim($_POST['surname']);
+ $institution=trim($_POST['institution']);
+ $phone=trim($_POST['phone']);
+ $email=trim($_POST['email']);
+ $medio=$_POST['medio'];
+
+$query=$this->crm_model->insert_open($names,$surname,$institution,$phone,$email,$medio);
+
+ echo "<h3>Cliente Ingresado Exitosamente</h3>";
+ /*redirect('index.php/recepcionista');*/
+}
+?>
 </div>
+<script type="text/javascript">
+$("#registrar_info").submit(function(event) {
+ 
+   event.preventDefault();
+ var $form = $( this ),
+          
+      url = $form.attr( 'action' );
+ 
+  /* Send the data using post */
+  var posting = $.post( url, { 
+  	medio:$form.find("select[name='medio']").val(),
+          names:$form.find("input[name='names']").val(),
+          surname:$form.find("input[name='surname']").val(),
+          institution:$form.find("input[name='institution']").val(),
+          email:$form.find("input[name='email']").val(),
+          phone:$form.find("input[name='phone']").val()
+           
+      });
+ 
+  /* Put the results in a div */
+  posting.done(function( data ) {
+    /*var content = $(data).find("#datos");*/
+    $( "#content" ).empty();
+	$( "#content2" ).empty().html(data);
+
+  });
+});
+</script>

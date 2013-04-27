@@ -1,5 +1,4 @@
-/*css("background","url('localhost:81/probando/CRM/CodeIgniter/style/imagenes/12.png')")
-"background","url('localhost:81/probando/CRM/CodeIgniter/style/imagenes/12.png')"*/
+
 $(document).ready(function() 
 {
   $("#encuesta").click(function()
@@ -22,19 +21,17 @@ $("#subir").click(function()
    });
 $("#addcustomer").click(function()
     {
-      $("#content").load("recepcionista/ingresar_cliente");
+      $("#content").empty();
+      $("#content2").load("recepcionista/ingresar_cliente");
    });
 $("#modcustomer").click(function()
   	{
-  		$("#content").load("recepcionista/modificar_cliente");
+      $("#content").empty();
+  		$("#content2").load("recepcionista/modificar_cliente");
  	 });
 
 $("#btnconfyes").click(function()
     {
-      /*$.post("editar_datos",{
-        nombre: $("#txthdd").val()
-      })*/
-     /* $("#datos").load("editar_datos");*/
      $("#areyou").hide();
      $("#info").hide();
      $("#editar_info").show();
@@ -57,6 +54,7 @@ $("#btnconfyes").click(function()
 	$("#enviar").mouseover(function(){$(this).css("opacity","1");});
 
 	$("#enviar").mouseout(function(){$(this).css("opacity","0.7");});
+
 
 });
 
