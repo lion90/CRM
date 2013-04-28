@@ -28,10 +28,11 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/lectura.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/escritura.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/modernizr.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>jquery-ui-1.10.0.custom/js/ckeditor/ckeditor.js"></script>
 				
 		<!-- comentar linea de enmedio para hacer funcionar graficas 
-		<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-1.9.1.js"></script>
-		 <!-- -->
+		<script type="text/javascript" src="<?php base_url(); ?>js/jquery-1.9.1.js"></script>
+		 <!-  -->
 
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-ui.js"></script>
 		

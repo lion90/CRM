@@ -5,9 +5,10 @@
  $phone=$_POST['phone'];
  $email=$_POST['email'];
  $medio=$_POST['medio'];
+ $career=$_POST['career'];
  $id=$_POST['idcust'];
 
- $query=$this->crm_model->update_open($id,$names,$surname,$institution,$phone,$email,$medio);
+ $query=$this->crm_model->update_open($id,$names,$surname,$institution,$phone,$email,$medio,$career);
 ?>
 <div id="auto" style="margin-top: 150px;">
 

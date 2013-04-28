@@ -81,8 +81,7 @@ select.formSelect    {
    background-color:#3F55E4;
    padding:2px;
    border:solid 1px black;
-   margin-right:1px;
-   margin-bottom:5px;
+   /*margin-left: 10px;*/
    cursor:pointer;
 }
 

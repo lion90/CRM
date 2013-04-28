@@ -5,8 +5,10 @@
  $phone=trim($_POST['phone']);
  $email=trim($_POST['email']);
  $medio=$_POST['medio'];
+ $career=$_POST['career'];
 
-$query=$this->crm_model->insert_open($names,$surname,$institution,$phone,$email,$medio);
+
+$query=$this->crm_model->insert_open($names,$surname,$institution,$phone,$email,$medio,$career);
 ?>
 
 <div id="auto" style="margin-top: 150px;">

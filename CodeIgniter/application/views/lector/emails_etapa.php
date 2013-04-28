@@ -7,7 +7,7 @@ echo form_open_multipart('index.php/lector/send_etapa');
 <h2>E-Mails por Etapas</h2>
 <table>
 <tr>
-<input id="asunto" style="margin-left:-31px;" name="asunto" type="text"value="Agregar Asunto..." name="load" onblur="if(this.value==''){this.value='Agregar Asunto...'}" onfocus="if(this.value=='Agregar Asunto...'){this.value=''}"/>
+<input id="asunto" style="margin-left:-31px;" name="asunto" type="text" placeholder="Agregar Asunto..." name="load" />
 <font style="font-weight: bold;"> Etapa:</font> 
 <select id="select_etapas" name="etapa">
   <option value="1">Encuestas</option>
@@ -15,7 +15,7 @@ echo form_open_multipart('index.php/lector/send_etapa');
   </select><input type="button" class="button" id="load_email_etapa" style="margin-left:15px;" value="Destinos"/>
 </tr>
 <tr>
-	<textarea id="msj" name="msj">Escriba el mensaje aquí...</textarea>
+	<textarea id="msj" name="msj"></textarea>
 </tr>
 <tr>
 	<input type="button"  id="adjuntar"/>
@@ -47,5 +47,7 @@ echo form_open_multipart('index.php/lector/send_etapa');
 //           mode : "textareas"
            
 //       });
-
+$("#adjuntar").click(function(){
+      $("#div_adjuntar").fadeToggle(1500);
+    });
  </script>

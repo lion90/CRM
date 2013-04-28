@@ -10,43 +10,50 @@
 
      ?>
  </datalist> 
-<form id="registrar_info" accept-charset="utf-8"  action="http://localhost:81/CRM/CodeIgniter/index.php/recepcionista/insert_datos">
+<datalist id="autocomplete2">
+    <?php 
+        $query1=$this->encuesta->carreras();
+        foreach ($query1->result() as $row) {
+            echo "<option value=\"".$row->CAREER_NAME."\">";
+        }
+
+     ?>
+ </datalist> 
+
+<form id="registrar_info" accept-charset="utf-8"  action="<?php echo base_url(); ?>index.php/recepcionista/insert_datos">
 
 	<center>
 	<h1>REGISTRO</h1>		
 	</center>
-	<label class="fieldLabel">Nombre:</label>
+	<div style="float:left">
+	<label class="fieldLabel">Nombre:</label><br><br>
+	<label class="fieldLabel">Apellido:</label><br><br>
+	<label class="fieldLabel">Instituci&oacute;n:</label><br><br>
+	<label class="fieldLabel">Tel&eacute;fono:</label><br><br>
+	<label class="fieldLabel">Email:</label><br><br>
+	<label class="fieldLabel">Carrera de Inter&eacute;s:</label><br><br>
+	</div>
+	<div style="float:left">
 	<input class="formInputText2" value="" type="text" value="" size="50" maxlength="50" name="names" required /><br><br>
-	<label class="fieldLabel">Apellido:</label>
 	<input class="formInputText2" type="text" value="" size="50" maxlength="50" name="surname" required /><br><br>
-	<label class="fieldLabel">Instituci&oacute;n:</label>
 	<input id="cargar_inst" class="formInputText2" type="text" value="" size="50" maxlength="50" name="institution" required list="autocomplete"  /><br><br>
-	<label class="fieldLabel">Tel&eacute;fono:</label>
 	<input class="formInputText2" type="text" value="" size="50" maxlength="50" name="phone" required /><br><br>	
-	<label class="fieldLabel">Email:</label>
 	<input class="formInputText2" type="text" value="" size="50" maxlength="50" name="email" required /><br><br> 
-	<label class="fieldLabel">Cómo se entero:</label>
-<select name="medio" required>
-		<option value="1" >RADIO</option>
-		<option value="2" >PRENSA</option>
-		<option value="3" >TV</option>
-		<option value="4" >VISITA INSTITUCIONAL</option>
-		<option value="5" >PAGINA WEB</option>
-		<option value="6" >FACEBOOK</option>
-</select><br><br>
-	<input id="btninsert" value="Registrar" type="submit">
+	<input class="formInputText2" type="text" value="" size="50" maxlength="50" name="career" required list="autocomplete2" /><br><br> 
+	</div>
+	<center><input id="btninsert" value="Registrar" type="submit"></center>
 </form>
 <?php 
-if(isset($_POST['names']) and isset($_POST['surname']) and isset($_POST['institution']) and isset($_POST['phone']) and isset($_POST['email']) and isset($_POST['medio']))
+if(isset($_POST['names']) and isset($_POST['surname']) and isset($_POST['institution']) and isset($_POST['phone']) and isset($_POST['email']) and isset($_POST['career']))
 {
  $names=trim($_POST['names']);
  $surname=trim($_POST['surname']);
  $institution=trim($_POST['institution']);
  $phone=trim($_POST['phone']);
  $email=trim($_POST['email']);
- $medio=$_POST['medio'];
+ $career=$_POST['career'];
 
-$query=$this->crm_model->insert_open($names,$surname,$institution,$phone,$email,$medio);
+$query=$this->crm_model->insert_customer($names,$surname,$institution,$phone,$email,$career);
 
  echo "<h3>Cliente Ingresado Exitosamente</h3>";
  /*redirect('index.php/recepcionista');*/
@@ -63,7 +70,7 @@ $("#registrar_info").submit(function(event) {
  
   /* Send the data using post */
   var posting = $.post( url, { 
-  	medio:$form.find("select[name='medio']").val(),
+  		  career:$form.find("input[name='career']").val(),
           names:$form.find("input[name='names']").val(),
           surname:$form.find("input[name='surname']").val(),
           institution:$form.find("input[name='institution']").val(),

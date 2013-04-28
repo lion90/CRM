@@ -8,17 +8,17 @@ echo form_open_multipart('index.php/lector/send_facultad');
 <h2>E-Mails por facultades</h2>
 <table>
 <tr>
-<input id="asunto" name="asunto" type="text"value="Agregar Asunto..." name="load" onblur="if(this.value==''){this.value='Agregar Asunto...'}" onfocus="if(this.value=='Agregar Asunto...'){this.value=''}"/>
+<input id="asunto" name="asunto" type="text" name="load" placeholder="Agregar Asunto"/>
 <font style="font-weight: bold;"> Facultad:</font> 
 <select id="select_facultades" name="facultades" style="margin-top:-100px;">
   <?php echo $facultades;?>
 </select><input type="button" class="button" id="load_email" style="margin-left:5px;" value="Destinos"/>
 </tr>
 <tr>
-	<textarea id="msj" name="msj">Escriba el mensaje aquí...</textarea>
+	<textarea id="msj" name="msj"></textarea>
 </tr>
 <tr>
-	<input type="button"  id="adjuntar"/>
+	<input type="button"  id="adjuntar" />
 <div id="div_adjuntar" style="">
 	Adjuntar archivo: <input type='file' class="button" name="userfile" id='archivo'>
 </div>
@@ -47,5 +47,7 @@ echo form_open_multipart('index.php/lector/send_facultad');
 //           mode : "textareas"
            
 //       });
-
+$("#adjuntar").click(function(){
+      $("#div_adjuntar").fadeToggle(1500);
+    });
  </script>

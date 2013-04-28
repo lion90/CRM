@@ -19,7 +19,7 @@ class Encuesta extends CI_Model
    }
    public function carreras()
    {
-      $query = $this->db->query('SELECT  `CAREER_NAME` FROM  careers   ');
+      $query = $this->db->query('SELECT  CAREER_NAME FROM  careers   ');
       return $query; 
    }
    public function universidades()

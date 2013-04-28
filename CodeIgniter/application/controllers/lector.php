@@ -52,7 +52,7 @@ class Lector extends CI_Controller {
 	{
 		$this->load->model("crm_read_model");
 		$data["facultades"]=$this->crm_read_model->listado_facultad();
-		$this->load->view('templates/header2');
+		/*$this->load->view('templates/header2');*/
 		$this->load->view("lector/emails_facultad",$data);
 	}
 	public function emails_carrera()
@@ -63,7 +63,7 @@ class Lector extends CI_Controller {
 	}
 	public function emails_etapa()
 	{
-		$this->load->view('templates/header2');
+		/*$this->load->view('templates/header2');*/
 		$this->load->view("lector/emails_etapa");
 	}
 

@@ -50,7 +50,7 @@ class CRM_model extends CI_Model
       else
          return $query="";
    }
-   public function insert_open($names,$surname,$institution,$phone,$email,$medio){
+   public function insert_open($names,$surname,$institution,$phone,$email,$medio,$career){
             $qr=$this->db->query(
                "
                select institution_id from institutions where institution_name='".$institution."'
@@ -119,12 +119,32 @@ class CRM_model extends CI_Model
                ");
                  
                }
+               $career=htmlentities($career);
+              $qr2=$this->db->query(
+              "
+              select career_id from careers where career_name='".$career."'
+              "
+              );
             
+            $qr2= $qr2->row_array();
+              $qr4=$this->db->query(
+              "
+              select open_house_survey_id from open_house_survey where customer_id='".$qr3['customer_id']."'
+              "
+              );
+            
+            $qr4= $qr4->row_array();
+
+             $this->db->query("
+                  insert into open_careers(open_house_survey_id, career_id, open_option)
+                  values(".$qr4['open_house_survey_id'].",".$qr2['career_id'].",1)
+               ");
+
             return $this->db->affected_rows();
 
 
          }
-public function update_open($id,$names,$surname,$institution,$phone,$email,$medio){
+public function update_open($id,$names,$surname,$institution,$phone,$email,$medio,$career){
             $qr=$this->db->query(
                "
                select institution_id from institutions where institution_name='".$institution."'
@@ -177,21 +197,106 @@ public function update_open($id,$names,$surname,$institution,$phone,$email,$medi
                   break;
                case 5://web
                   $this->db->query("
-                  insert into open_house_survey(customer_id, open_house_id, oh_billboard, tipo_contacto)
+                  insert into open_house_survey(customer_id, open_house_id, website, tipo_contacto)
                   values(".$id.",6003,'x','V')
                ");
                   break;
                case 6://facebook
                  $this->db->query("
-                  insert into open_house_survey(customer_id, open_house_id, oh_billboard, tipo_contacto)
+                  insert into open_house_survey(customer_id, open_house_id, facebook, tipo_contacto)
                   values(".$id.",6003,'x','V')
                ");
                  
                }
+
+               $career=htmlentities($career);
+            $qr2=$this->db->query(
+              "
+              select career_id from careers where career_name='".$career."'
+              "
+              );
             
+            $qr2= $qr2->row_array();
+
+              $qr4=$this->db->query(
+              "
+              select open_house_survey_id from open_house_survey where customer_id='".$id."'
+              "
+              );
+            
+            $qr4= $qr4->row_array();
+
+             $this->db->query("
+                  insert into open_careers(open_house_survey_id, career_id, open_option)
+                  values(".$qr4['open_house_survey_id'].",".$qr2['career_id'].",1)
+               ");
+
             return $this->db->affected_rows();
 
 
          }
+public function insert_customer($names,$surname,$institution,$phone,$email,$career){
+            $qr=$this->db->query(
+               "
+               select institution_id from institutions where institution_name='".$institution."'
+               "
+               );
+            if($qr->num_rows()<1)
+            {
+               $this->db->query("
+                  insert into institutions (institution_name,acronym,institution_type)
+                  values('".$institution."', '','M')
+                  ");
+
+               $qr=$this->db->query(
+               "
+               select institution_id from institutions where institution_name='".$institution."'
+               "
+               );
+            }
+            $qr= $qr->row_array();
+               $career=htmlentities($career);
+               $qr2=$this->db->query(
+               "
+               select career_id from careers where career_name='".$career."'
+               "
+               );
+            
+            $qr2= $qr2->row_array();
+
+            $this->db->query("
+                  insert into customers (institution_id,names,surname,customer_email,recepcion_status,parent_phone)
+                  values(".$qr['institution_id'].",'".$names."', '".$surname."', '".$email."','x',".$phone.")
+               ");
+            $qr3=$this->db->query("
+                  select customer_id from customers where names='".$names."' and surname='".$surname."' and customer_email='".$email."'
+               ");
+
+            $qr3=$qr3->row_array();
+
+            $date=date('Y-m-d');
+            
+
+           $this->db->query("
+                  insert into recepcion(customer_id, recepcion_date)
+                  values(".$qr3['customer_id'].",'".$date."')
+               ");
+                 
+                  $qr4=$this->db->query(
+              "
+              select recepcion_id from recepcion where customer_id='".$qr3['customer_id']."'
+              "
+              );
+            
+            $qr4= $qr4->row_array();
+
+             $this->db->query("
+                  insert into recepcion_careers(recepcion_id, career_id, recepcion_option)
+                  values(".$qr4['recepcion_id'].",".$qr2['career_id'].",1)
+               ");         
+            return $this->db->affected_rows();
+
+
+         }         
 }
 ?>

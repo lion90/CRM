@@ -2,8 +2,8 @@
 <ul id="menu">
 <li><a href="#">Clientes</a>
 	<ul>
-		<li><a id="addcustomer" >Agregar Clientes</a></li>
-		<li id="modcustomer" class="ultimo"><a >Modificar Clientes</a></li>
+		<li class="ultimo"><a id="addcustomer" >Agregar Clientes</a></li>
+		
 		
 	</ul>	
 </li>
