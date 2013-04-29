@@ -137,13 +137,13 @@
      <br><br>
      <label class="fieldLabel"  >¿Como calificarias la guia vocacional recibida este dia?</label>
      <br>
-     <input class="fieldLabel" tabindex="30" style="margin-left:0px;" type="radio"  name="group1"  value="x">
+     <input class="fieldLabel" tabindex="30" style="margin-left:0px;" type="radio"  name="group1"  value="Excelente">
        <label class="fieldLabel" >Excelente</label>
-     <input class="fieldLabel" tabindex="31" style="margin-left:0px;" type="radio"  name="group2"  value="x">
+     <input class="fieldLabel" tabindex="31" style="margin-left:0px;" type="radio"  name="group1"  value="Muy Buena">
      <label class="fieldLabel" >Muy Buena</label>
-     <input class="fieldLabel" tabindex="32" style="margin-left:0px;" type="radio"  name="group3"  value="x">
+     <input class="fieldLabel" tabindex="32" style="margin-left:0px;" type="radio"  name="group1"  value="Buena">
        <label class="fieldLabel" >Buena</label>
-     <input class="fieldLabel" tabindex="33" style="margin-left:0px;" type="radio"  name="group4"  value="x">
+     <input class="fieldLabel" tabindex="33" style="margin-left:0px;" type="radio"  name="group1"  value="Mala">
      <label class="fieldLabel" >Mala</label>
      <br>
      <br>

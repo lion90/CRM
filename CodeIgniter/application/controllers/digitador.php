@@ -20,6 +20,15 @@ class Digitador extends CI_Controller {
 		$this->load->view('templates/banner');
 		$this->load->view('digitador/index');
 		$this->load->view('templates/footer');
+
+        if(isset($data['bandera']))
+        {
+            if($data['bandera']=='1')
+            {
+                $this->session->unset_userdata('bandera');
+                $this->load->view('digitador/prueba');
+            }
+        }
 	}
 		public function ing_encuesta(){
 		$this->load->model("encuesta","en"); 
@@ -39,226 +48,234 @@ class Digitador extends CI_Controller {
 		$this->load->view('digitador/ingreso_openhouse');
 	}
 		public function dato_encuesta(){
+        $this->load->model("encuesta","en"); 
+         
+        $fecha=$this->input->post('fecha',true);
 
-    	   $this->load->model("encuesta","en"); 
-             
-            $fecha=$this->input->post('fecha',true);
+        $query1 =  $this->en->buscar_colegio($this->input->post('colegio',true));
+        foreach ($query1->result() as $fila)
+        {    
+            $col=$fila->INSTITUTION_ID;
+        }  
 
-            $query1 =  $this->en->buscar_colegio($this->input->post('colegio',true));
-            foreach ($query1->result() as $fila)
-            {    
-                $col=$fila->INSTITUTION_ID;
-            }  
+        $query2 =  $this->en->buscar_tecnico($this->input->post('tecnico',true));
+        foreach ($query2->result() as $fila)
+        {    
+            $tec=$fila->VALUE_CODE;
+        }  
 
-            $query2 =  $this->en->buscar_tecnico($this->input->post('tecnico',true));
-            foreach ($query2->result() as $fila)
-            {    
-                $tec=$fila->VALUE_CODE;
-            }  
-
-            $nombre=$this->input->post('nombre',true);
-            $email=$this->input->post('email',true);
-            $direccion=$this->input->post('direccion',true);
-            $nompapa=$this->input->post('nombrefamilia',true);
-            $tel=$this->input->post('tel',true);
-            $trabajo=$this->input->post('trabajo',true);
-
-
-            $query3 =  $this->en->buscar_carrera($this->input->post('carrera1',true));
-            foreach ($query3->result() as $fila)
-            {    
-                $car1=$fila->CAREER_ID;
-            }  
+        $nombre=$this->input->post('nombre',true);
+        $email=$this->input->post('email',true);
+        $direccion=$this->input->post('direccion',true);
+        $nompapa=$this->input->post('nombrefamilia',true);
+        $tel=$this->input->post('tel',true);
+        $trabajo=$this->input->post('trabajo',true);
 
 
-
-            $query4 =  $this->en->buscar_carrera($this->input->post('carrera2',true));
-            foreach ($query4->result() as $fila)
-            {    
-                $car2=$fila->CAREER_ID;
-            }  
-
-
-            $query5 =  $this->en->buscar_colegio($this->input->post('universidad1',true));
-            foreach ($query5->result() as $fila)
-            {    
-                $uni1=$fila->INSTITUTION_ID;
-            }  
-
-
-            $query6 =  $this->en->buscar_colegio($this->input->post('universidad2',true));
-            foreach ($query6->result() as $fila)
-            {    
-                $uni2=$fila->INSTITUTION_ID;
-            }  
-            
-            if ($this->input->post('escuchado1',true)==false)
-            {
-                $cd='';
-            }
-            else
-            {
-                $cd=$this->input->post('escuchado1',true);
-            }
-            if ($this->input->post('escuchado2',true)==false)
-            {
-                $fc='';
-            }
-            else
-            {
-                $fc=$this->input->post('escuchado2',true);
-            }
-            if ($this->input->post('escuchado3',true)==false)
-            {
-                $te='';
-            }
-            else
-            {
-                $te=$this->input->post('escuchado3',true);
-            }
-            if ($this->input->post('escuchado4',true)==false)
-            {
-                $ac='';
-            }
-            else
-            {
-                $ac=$this->input->post('escuchado4',true);
-            }
-            if ($this->input->post('escuchado5',true)==false)
-            {
-                $ci='';
-            }
-            else
-            {
-                $ci=$this->input->post('escuchado5',true);
-            }
-            if ($this->input->post('escuchado6',true)==false)
-            {
-                $lda='';
-            }
-            else
-            {
-                $lda=$this->input->post('escuchado6',true);
-            }
-            if ($this->input->post('escuchado7',true)==false)
-            {
-                $ot='';
-            }
-            else
-            {
-                $ot=$this->input->post('escuchado7',true);
-            }
-            if ($this->input->post('escuchado8',true)==false)
-            {
-                $na='';
-            }
-            else
-            {
-                $na=$this->input->post('escuchado8',true);
-            }
-            if ($this->input->post('group1',true)==false)
-            {
-                $ex='';
-            }
-            else
-            {
-                $ex=$this->input->post('group1',true);
-            }
-            if ($this->input->post('group2',true)==false)
-            {
-                $mb='';
-            }
-            else
-            {
-                $mb=$this->input->post('group2',true);
-            }
-            if ($this->input->post('group3',true)==false)
-            {
-                $bu='';
-            }
-            else
-            {
-                $bu=$this->input->post('group3',true);
-            }
-            if ($this->input->post('group4',true)==false)
-            {
-                $ma='';
-            }
-            else
-            {
-                $ma=$this->input->post('group4',true);
-            }
-            if ($this->input->post('publici1',true)==false)
-            {
-                $ra='';
-            }
-            else
-            {
-                $ra=$this->input->post('publici1',true);
-            }
-            if ($this->input->post('publici2',true)==false)
-            {
-                $va='';
-            }
-            else
-            {
-                $va=$this->input->post('publici2',true);
-            }
-            if ($this->input->post('publici3',true)==false)
-            {
-                $pr='';
-            }
-            else
-            {
-                $pr=$this->input->post('publici3',true);
-            }
-            if ($this->input->post('publici4',true)==false)
-            {
-                $vc='';
-            }
-            else
-            {
-                $vc=$this->input->post('publici4',true);
-            }
-            if ($this->input->post('publici5',true)==false)
-            {
-                $tv='';
-            }
-            else
-            {
-                $tv=$this->input->post('publici6',true);
-            }
-            if ($this->input->post('publici1',true)==false)
-            {
-                $ot2='';
-            }
-            else
-            {
-                $ot2=$this->input->post('publici6',true);
-            }
+        $query3 =  $this->en->buscar_carrera($this->input->post('carrera1',true));
+        foreach ($query3->result() as $fila)
+        {    
+            $car1=$fila->CAREER_ID;
+        }  
 
 
 
+        $query4 =  $this->en->buscar_carrera($this->input->post('carrera2',true));
+        foreach ($query4->result() as $fila)
+        {    
+            $car2=$fila->CAREER_ID;
+        }  
 
-            $fecha=$this->input->post('fecha',true);
 
-            $cliente = $this->en->ingresar_cliente($col,$nombre,$email,$direccion,$nompapa,$tel,$tec);
-            foreach ($cliente->result() as $fila)
-            {    
-                $idcliente=$fila->CUSTOMER_ID;
-            }
-            $vi='';
-            $encues = $this->en->ingresar_encuesta($idcliente,$fecha,$cd,$te,$ci,$fc,$ac,$lda,$na,$ot,$vi,$ot2,$ex,$mb,$bu,$ma,$ra,$pr,$tv,$va,$vc);
-            foreach ($encues->result() as $fila)
-            {    
-                $idencues=$fila->IEM_SURVEY_ID;
-            }
-            $this->en->ingresar_uni($uni1,$idencues,"1");
-            $this->en->ingresar_uni($uni2,$idencues,"2");
-            $this->en->ingresar_carre($idencues,$car1,"1");
-            $this->en->ingresar_carre($idencues,$car2,"2");
+        $query5 =  $this->en->buscar_colegio($this->input->post('universidad1',true));
+        foreach ($query5->result() as $fila)
+        {    
+            $uni1=$fila->INSTITUTION_ID;
+        }  
 
-            redirect("index.php/3");
+
+        $query6 =  $this->en->buscar_colegio($this->input->post('universidad2',true));
+        foreach ($query6->result() as $fila)
+        {    
+            $uni2=$fila->INSTITUTION_ID;
+        }  
+        
+        if ($this->input->post('escuchado1',true)==false)
+        {
+            $cd='';
+        }
+        else
+        {
+            $cd=$this->input->post('escuchado1',true);
+        }
+        if ($this->input->post('escuchado2',true)==false)
+        {
+            $fc='';
+        }
+        else
+        {
+            $fc=$this->input->post('escuchado2',true);
+        }
+        if ($this->input->post('escuchado3',true)==false)
+        {
+            $te='';
+        }
+        else
+        {
+            $te=$this->input->post('escuchado3',true);
+        }
+        if ($this->input->post('escuchado4',true)==false)
+        {
+            $ac='';
+        }
+        else
+        {
+            $ac=$this->input->post('escuchado4',true);
+        }
+        if ($this->input->post('escuchado5',true)==false)
+        {
+            $ci='';
+        }
+        else
+        {
+            $ci=$this->input->post('escuchado5',true);
+        }
+        if ($this->input->post('escuchado6',true)==false)
+        {
+            $lda='';
+        }
+        else
+        {
+            $lda=$this->input->post('escuchado6',true);
+        }
+        if ($this->input->post('escuchado7',true)==false)
+        {
+            $ot='';
+        }
+        else
+        {
+            $ot=$this->input->post('escuchado7',true);
+        }
+        if ($this->input->post('escuchado8',true)==false)
+        {
+            $na='';
+        }
+        else
+        {
+            $na=$this->input->post('escuchado8',true);
+        }
+
+
+        if ($this->input->post('group1',true)!='Excelente')
+        {
+            $ex='';
+        }
+        else
+        {
+            $ex='x';
+        }
+        if ($this->input->post('group1',true)!='Muy Buena')
+        {
+            $mb='';
+        }
+        else
+        {
+            $mb='x';
+        }
+        if ($this->input->post('group1',true)!='Buena')
+        {
+            $bu='';
+        }
+        else
+        {
+            $bu='x';
+        }
+        if ($this->input->post('group1',true)!='Mala')
+        {
+            $ma='';
+        }
+        else
+        {
+            $ma='x';
+        }
+
+
+
+        if ($this->input->post('publici1',true)==false)
+        {
+            $ra='';
+        }
+        else
+        {
+            $ra=$this->input->post('publici1',true);
+        }
+        if ($this->input->post('publici2',true)==false)
+        {
+            $va='';
+        }
+        else
+        {
+            $va=$this->input->post('publici2',true);
+        }
+        if ($this->input->post('publici3',true)==false)
+        {
+            $pr='';
+        }
+        else
+        {
+            $pr=$this->input->post('publici3',true);
+        }
+        if ($this->input->post('publici4',true)==false)
+        {
+            $vc='';
+        }
+        else
+        {
+            $vc=$this->input->post('publici4',true);
+        }
+        if ($this->input->post('publici5',true)==false)
+        {
+            $tv='';
+        }
+        else
+        {
+            $tv=$this->input->post('publici6',true);
+        }
+        if ($this->input->post('publici1',true)==false)
+        {
+            $ot2='';
+        }
+        else
+        {
+            $ot2=$this->input->post('publici6',true);
+        }
+
+
+
+
+        $fecha=$this->input->post('fecha',true);
+
+        $cliente = $this->en->ingresar_cliente($col,$nombre,$email,$direccion,$nompapa,$tel,$tec);
+        foreach ($cliente->result() as $fila)
+        {    
+            $idcliente=$fila->CUSTOMER_ID;
+        }
+        $vi='';
+        $encues = $this->en->ingresar_encuesta($idcliente,$fecha,$cd,$te,$ci,$fc,$ac,$lda,$na,$ot,$vi,$ot2,$ex,$mb,$bu,$ma,$ra,$pr,$tv,$va,$vc);
+        foreach ($encues->result() as $fila)
+        {    
+            $idencues=$fila->IEM_SURVEY_ID;
+        }
+        $this->en->ingresar_uni($uni1,$idencues,"1");
+        $this->en->ingresar_uni($uni2,$idencues,"2");
+        $this->en->ingresar_carre($idencues,$car1,"1");
+        $this->en->ingresar_carre($idencues,$car2,"2");
+
+
+        $this->load->library('session');
+        $this->session->set_userdata('bandera', '1');
+                   $this->session->set_userdata($data);
+        redirect("index.php/3");
 	}
 
 		public function confirmar_openhouse(){
