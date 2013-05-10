@@ -25,7 +25,6 @@ class Digitador extends CI_Controller {
         {
             if($data['bandera']=='1')
             {
-                $this->session->unset_userdata('bandera');
                 $this->load->view('digitador/prueba');
             }
         }
@@ -36,6 +35,15 @@ class Digitador extends CI_Controller {
 		 $data['query2'] = $this->en->tecnicos();
 		 $data['query3'] = $this->en->carreras();
 		 $data['query4'] = $this->en->universidades();
+         $data1=$this->session->all_userdata();
+            if(isset($data1['bandera']))
+            {
+                if($data1['bandera']=='1')
+                {
+                    $this->session->unset_userdata('bandera');
+                    $this->load->view('digitador/correcto');
+                }
+            }
 
 		$this->load->view('digitador/ingreso_encuesta', $data);
 	}
@@ -52,17 +60,33 @@ class Digitador extends CI_Controller {
          
         $fecha=$this->input->post('fecha',true);
 
-        $query1 =  $this->en->buscar_colegio($this->input->post('colegio',true));
+        $query1 =  $this->en->buscar_colegio($this->input->post('colegio',true),"M");
         foreach ($query1->result() as $fila)
         {    
             $col=$fila->INSTITUTION_ID;
-        }  
+        }
+        if(!isset($col))
+        {
+            $query1 = $this->en->agregar_colegio($this->input->post('colegio',true));
+            foreach ($query1->result() as $fila)
+            {    
+                $col=$fila->INSTITUTION_ID;
+            }
+        }
 
         $query2 =  $this->en->buscar_tecnico($this->input->post('tecnico',true));
         foreach ($query2->result() as $fila)
         {    
-            $tec=$fila->VALUE_CODE;
+            $tec=$fila->VALUE_ID;
         }  
+        if(!isset($tec))
+        {
+            $query2 = $this->en->agregar_tecnico($this->input->post('tecnico',true));
+            foreach ($query2->result() as $fila)
+            {    
+                $tec=$fila->VALUE_ID;
+            }
+        }
 
         $nombre=$this->input->post('nombre',true);
         $email=$this->input->post('email',true);
@@ -87,18 +111,33 @@ class Digitador extends CI_Controller {
         }  
 
 
-        $query5 =  $this->en->buscar_colegio($this->input->post('universidad1',true));
+        $query5 =  $this->en->buscar_colegio($this->input->post('universidad1',true),"S");
         foreach ($query5->result() as $fila)
         {    
             $uni1=$fila->INSTITUTION_ID;
         }  
+        if(!isset($uni1))
+        {
+            $query5 = $this->en->agregar_universidad($this->input->post('universidad1',true));
+            foreach ($query5->result() as $fila)
+            {    
+                $uni1=$fila->INSTITUTION_ID;
+            }
+        }
 
-
-        $query6 =  $this->en->buscar_colegio($this->input->post('universidad2',true));
+        $query6 =  $this->en->buscar_colegio($this->input->post('universidad2',true),"S");
         foreach ($query6->result() as $fila)
         {    
             $uni2=$fila->INSTITUTION_ID;
         }  
+        if(!isset($uni2))
+        {
+            $query6 = $this->en->agregar_universidad($this->input->post('universidad2',true));
+            foreach ($query6->result() as $fila)
+            {    
+                $uni2=$fila->INSTITUTION_ID;
+            }
+        }
         
         if ($this->input->post('escuchado1',true)==false)
         {
@@ -251,11 +290,27 @@ class Digitador extends CI_Controller {
         }
 
 
+        if ($this->input->post('teltrabajo',true)==false)
+        {
+            $teltra='';
+        }
+        else
+        {
+            $teltra=$this->input->post('teltrabajo',true);
+        }
+        if ($this->input->post('emailpa',true)==false)
+        {
+            $emailpa='';
+        }
+        else
+        {
+            $emailpa=$this->input->post('emailpa',true);
+        }
 
 
         $fecha=$this->input->post('fecha',true);
-
-        $cliente = $this->en->ingresar_cliente($col,$nombre,$email,$direccion,$nompapa,$tel,$tec);
+       
+        $cliente = $this->en->ingresar_cliente($col,$nombre,$email,$direccion,$nompapa,$tel,$tec,$teltra,$emailpa,$trabajo);
         foreach ($cliente->result() as $fila)
         {    
             $idcliente=$fila->CUSTOMER_ID;
@@ -274,7 +329,7 @@ class Digitador extends CI_Controller {
 
         $this->load->library('session');
         $this->session->set_userdata('bandera', '1');
-                   $this->session->set_userdata($data);
+                  // $this->session->set_userdata($data);
         redirect("index.php/3");
 	}
 

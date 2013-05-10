@@ -28,14 +28,14 @@ class Encuesta extends CI_Model
       return $query;
    }
    
-   public function buscar_colegio($q1)
+   public function buscar_colegio($q1,$q2)
    {
-      $query = $this->db->query('SELECT `INSTITUTION_ID` FROM `institutions` WHERE `INSTITUTION_NAME`="'.$q1.'"');
+      $query = $this->db->query('SELECT `INSTITUTION_ID` FROM `institutions` WHERE `INSTITUTION_NAME`="'.$q1.'" and `INSTITUTION_TYPE`="'.$q2.'"');
       return $query;
    }
     public function buscar_tecnico($q1)
    {
-      $query = $this->db->query('SELECT `VALUE_CODE` FROM `all_values` where `VALUE_DESCRIPTION`="'.$q1.'"');
+      $query = $this->db->query('SELECT `VALUE_ID` FROM `all_values` where `VALUE_DESCRIPTION`="'.$q1.'"');
       return $query;
    }
     public function buscar_carrera($q1)
@@ -43,10 +43,10 @@ class Encuesta extends CI_Model
       $query = $this->db->query('SELECT `CAREER_ID` FROM `careers` WHERE `CAREER_NAME`="'.$q1.'"');
       return $query;
    }
-   public function ingresar_cliente($q1,$q2,$q3,$q4,$q5,$q6,$q7)
+   public function ingresar_cliente($q1,$q2,$q3,$q4,$q5,$q6,$q7,$q8,$q9,$q10)
    {
-      $this->db->query('INSERT INTO `customers`(`CUSTOMER_ID`, `INSTITUTION_ID`, `NAMES`, `SURNAME`, `CUSTOMER_EMAIL`, `SURVEY_STATUS`, `OPEN_HOUSE_STATUS`, `PACKAGE_STATUS`, `REGISTRATION_STATUS`, `CUSTOMER_ADDRESS_LINE1`, `CUSTOMER_CITI`, `CUSTOMER_STATE`, `PARENT_NAME`, `PARENT_EMAIL`, `PARENT_PHONE`, `GENDER`, `HIGH_SCHOOL_DIPLOMA`, `PARENT_ADDRESS_LINE1`) VALUES ("","'.$q1.'","'.$q2.'","","'.$q3.'","","","","","'.$q4.'","","","'.$q5.'","", "'.$q6.'","","'.$q7.'","")');
-      $query = $this->db->query('SELECT `CUSTOMER_ID`  FROM `customers` WHERE `INSTITUTION_ID`="'.$q1.'" and `NAMES`="'.$q2.'" and  `CUSTOMER_EMAIL`="'.$q3.'" and  `CUSTOMER_ADDRESS_LINE1` ="'.$q4.'" and `PARENT_NAME` ="'.$q5.'" and  `PARENT_PHONE`="'.$q6.'" and `HIGH_SCHOOL_DIPLOMA`="'.$q7.'"');
+      $this->db->query('INSERT INTO `customers`(`CUSTOMER_ID`, `INSTITUTION_ID`, `NAMES`, `SURNAME`, `CUSTOMER_EMAIL`, `SURVEY_STATUS`, `OPEN_HOUSE_STATUS`, `PACKAGE_STATUS`, `REGISTRATION_STATUS`, `CUSTOMER_ADDRESS_LINE1`, `CUSTOMER_CITI`, `CUSTOMER_STATE`, `PARENT_NAME`, `PARENT_EMAIL`, `PARENT_PHONE`, `GENDER`, `HIGH_SCHOOL_DIPLOMA`, `PARENT_ADDRESS_LINE1`, `CUSTOMER_PHONE`, `JOB`) VALUES ("","'.$q1.'","'.$q2.'","","'.$q3.'","x","","","","'.$q4.'","","","'.$q5.'","'.$q9.'", "'.$q8.'","","'.$q7.'","","'.$q6.'","'.$q10.'")');
+      $query = $this->db->query('SELECT `CUSTOMER_ID`  FROM `customers` WHERE `INSTITUTION_ID`="'.$q1.'" and `NAMES`="'.$q2.'" and  `CUSTOMER_EMAIL`="'.$q3.'" and  `CUSTOMER_ADDRESS_LINE1` ="'.$q4.'" and `PARENT_NAME` ="'.$q5.'" and  `PARENT_PHONE`="'.$q8.'" and `HIGH_SCHOOL_DIPLOMA`="'.$q7.'"  and  `CUSTOMER_PHONE`="'.$q6.'" and  `PARENT_EMAIL`="'.$q9.'" and  `JOB`="'.$q10.'"  ');
       return $query;
    }
    public function ingresar_encuesta($q2,$q3,$q4,$q5,$q6,$q7,$q8,$q9,$q10,$q11,$q12,$q13,$q14,$q15,$q16,$q17,$q18,$q19,$q20,$q21,$q22)
@@ -66,6 +66,30 @@ class Encuesta extends CI_Model
       $this->db->query('INSERT INTO `iem_careers`(`IEM_CAREER`, `IEM_SURVEY_ID`, `CAREER_ID`, `IEM_OPTION`) VALUES ("","'.$q1.'","'.$q2.'","'.$q3.'")');
       //$query = $this->db->query('');
       //return $query;
+   }
+   public function agregar_colegio($q1)
+   {
+
+      $this->db->query('insert into institutions (institution_name,acronym,institution_type) values("'.$q1.'", "","M") ');
+
+      $query = $this->db->query('SELECT `INSTITUTION_ID` FROM `institutions` WHERE `INSTITUTION_NAME`="'.$q1.'" and `INSTITUTION_TYPE`= "M" ');
+      return $query;      
+   }
+   public function agregar_universidad($q1)
+   {
+
+      $this->db->query('insert into institutions (institution_name,acronym,institution_type) values("'.$q1.'", "","S") ');
+
+      $query = $this->db->query('SELECT `INSTITUTION_ID` FROM `institutions` WHERE `INSTITUTION_NAME`="'.$q1.'" and `INSTITUTION_TYPE`= "S" ');
+      return $query;      
+   }
+   public function agregar_tecnico($q1)
+   {
+
+      $this->db->query('INSERT INTO `all_values`(`VALUE_SET_ID`, `VALUE_DESCRIPTION`) VALUES ("2","'.$q1.'")');
+
+      $query = $this->db->query('SELECT `VALUE_ID` FROM `all_values` where `VALUE_DESCRIPTION`="'.$q1.'"');
+      return $query;      
    }
 }
 ?>
