@@ -45,7 +45,7 @@ class Encuesta extends CI_Model
    }
    public function ingresar_cliente($q1,$q2,$q3,$q4,$q5,$q6,$q7,$q8,$q9,$q10)
    {
-      $this->db->query('INSERT INTO `customers`(`CUSTOMER_ID`, `INSTITUTION_ID`, `NAMES`, `SURNAME`, `CUSTOMER_EMAIL`, `SURVEY_STATUS`, `OPEN_HOUSE_STATUS`, `PACKAGE_STATUS`, `REGISTRATION_STATUS`, `CUSTOMER_ADDRESS_LINE1`, `CUSTOMER_CITI`, `CUSTOMER_STATE`, `PARENT_NAME`, `PARENT_EMAIL`, `PARENT_PHONE`, `GENDER`, `HIGH_SCHOOL_DIPLOMA`, `PARENT_ADDRESS_LINE1`, `CUSTOMER_PHONE`, `JOB`) VALUES ("","'.$q1.'","'.$q2.'","","'.$q3.'","x","","","","'.$q4.'","","","'.$q5.'","'.$q9.'", "'.$q8.'","","'.$q7.'","","'.$q6.'","'.$q10.'")');
+      $this->db->query('INSERT INTO `customers`(`CUSTOMER_ID`, `INSTITUTION_ID`, `NAMES`, `SURNAME`, `CUSTOMER_EMAIL`, `SURVEY_STATUS`, `OPEN_HOUSE_STATUS`, `PACKAGE_STATUS`, `REGISTRATION_STATUS`, `CUSTOMER_ADDRESS_LINE1`, `CUSTOMER_CITI`, `CUSTOMER_STATE`, `PARENT_NAME`, `PARENT_EMAIL`, `PARENT_PHONE`, `GENDER`, `HIGH_SCHOOL_DIPLOMA`, `PARENT_ADDRESS_LINE1`, `CUSTOMER_PHONE`, `JOB`) VALUES ("","'.$q1.'","'.$q2.'","","'.$q3.'","X","","","","'.$q4.'","","T","'.$q5.'","'.$q9.'", "'.$q8.'","","'.$q7.'","","'.$q6.'","'.$q10.'")');
       $query = $this->db->query('SELECT `CUSTOMER_ID`  FROM `customers` WHERE `INSTITUTION_ID`="'.$q1.'" and `NAMES`="'.$q2.'" and  `CUSTOMER_EMAIL`="'.$q3.'" and  `CUSTOMER_ADDRESS_LINE1` ="'.$q4.'" and `PARENT_NAME` ="'.$q5.'" and  `PARENT_PHONE`="'.$q8.'" and `HIGH_SCHOOL_DIPLOMA`="'.$q7.'"  and  `CUSTOMER_PHONE`="'.$q6.'" and  `PARENT_EMAIL`="'.$q9.'" and  `JOB`="'.$q10.'"  ');
       return $query;
    }
