@@ -75,7 +75,7 @@
      <input class="formInputText"  required style="margin-left:148px;" type="text" name="email" id="email" value="" size="50" maxlength="50"  />
      <label class="fieldLabel" color="red" style="margin-left:0px; font-size:9px; color:red;" >(*)</label>
      <label class="fieldLabel" style="margin-left:45px;" >Tel:</label>
-     <input class="formInputText"  style="margin-left:1px;" type="text" name="tel" id="tel" value="" size="10" maxlength="8"  />
+     <input class="formInputText" required  style="margin-left:1px;" type="text" name="tel" id="tel" value="" size="10" maxlength="8"  />
      <label class="fieldLabel" color="red" style="margin-left:0px; font-size:9px; color:red;" >(*)</label>
      <br>
      <label class="fieldLabel"  >Direccion:</label>
