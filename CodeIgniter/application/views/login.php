@@ -1,6 +1,55 @@
+ <script type="text/javascript"> 
+ function validar(e) {
+  tecla = (document.all) ? e.keyCode : e.which;
+  if (tecla==13) {validar_usuario();}
+}
+ function validar_usuario()
+{
+    
+    var nick = $("#nick").val();
+    var pass = $("#pass").val();
+    
+    $.ajax
+    ({ 
+    	type: "POST",
+        url: "index.php/login/redireccion",
+        data: 'nick='+nick +'&'+ 'pass='+pass,
+        success: function(data) 
+        {   
+            var obj = jQuery.parseJSON(data);
+            var bandera = obj.bandera;
+            var msj     = obj.mensaje;
+
+            switch(bandera)
+            {
+                case 1:
+                    var modulo = obj.nivel;
+                    location.href = modulo;
+                    break;
+                    
+               default:
+                    document.getElementById('mensaje_error_form_login').style.visibility='visible';
+                        
+                    break;
+                }
+
+        },
+        error: function(xml,msg)
+        {
+            document.getElementById('mensaje_error_form_login').style.visibility='visible';
+        }
+    });  
+}
+</script>
+<?php 
+
+	?>
 	<div class="login" id="cuadro_login">
+
 	<!--div id="cuadro_login2"-->
 	<?php 
+	
+	 
 	$this->load->helper("form");
 	$atrb = array('id' =>'cuadro_login2');
 	echo form_open("index.php/login/redireccion",$atrb);
@@ -19,23 +68,26 @@
 	</tr>
 	<tr> <td colspan="2" align="right">
             <div class="demo">
-				<input type="submit" value="INGRESAR" aria-disabled="false" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" name="aceptar" id="aceptar" type="button">
+				<input type="button" onclick="validar_usuario()" value="INGRESAR" aria-disabled="false" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" name="aceptar" id="aceptar" type="button">
                 <button aria-disabled="false" role="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" name="aceptar" id="aceptar" type="reset"><span class="ui-button-text">LIMPIAR</span></button>
              </div>
 
         </td>
 	</tr>
+	<tr><td colspan="2" align="right">
+    
+        <div id="mensaje_error_form_login" style="visibility: hidden; color:red; font-size:15px;">
+         Usuario o Contrase&ntilde;a Incorrecta
+          </div>
+		</td>
+	</tr>
 	</table></td>
 	<td><img src="<?php echo base_url(); ?>style/imagenes/llave3.png" border="0"></td>
 	</tr>			 
-	</table id="tabla"><table>
-	<tr><td colspan="3" align="center">
-    <br/>
-        <div id="mensaje_error_form_login" class="alerta" style="visibility: hidden;">
-         <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span> </p>
-          </div>
-		</td>
-	</tr></table>
+	</table id="tabla">
 </form>
 <!--/div-->
 </div>
+
+
+
